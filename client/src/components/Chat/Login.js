@@ -38,3 +38,23 @@ function Login() {
             }
         });
     };
+    return (
+        <div>
+            {showLoading &&
+                <Spinner color="primary" />
+            }
+            <Jumbotron>
+                <Form onSubmit={login}>
+                    <FormGroup>
+                        <Label>Nickname</Label>
+                        <Input type="text" name="nickname" id="nickname" placeholder="Enter Your Nickname" value={creds.nickname} onChange={onChange} />
+                    </FormGroup>
+                    <Button variant="primary" type="submit">
+                        Login
+                    </Button>
+                </Form>
+            </Jumbotron>
+        </div>
+    );
+        };
+    export default Login;
