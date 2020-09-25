@@ -69,4 +69,31 @@ function RoomList() {
             } 
         });
 
-        
+        history.push('/chatroom/' + roomname);
+    }
+    const logout = () => {
+        localStorage.removeItem('nickname');
+        history.push('/login');
+    }
+    return (
+        <div>
+            {showLoading &&
+                <Spinner color="primary" />
+            }
+            <Jumbotron>
+                <h3>{nickname} <Button onClick={() => { logout() }}>Logout</Button></h3>
+                <h2>Room List</h2>
+                <div>
+                    <Link to="/addroom">Add Room</Link>
+                </div>
+                <ListGroup>
+                    {room.map((item, idx) => (
+                        <ListGroupItem key={idx} action onClick={() => { enterChatRoom(item.roomname) }}>{item.roomname}</ListGroupItem>
+                    ))}
+                </ListGroup>
+            </Jumbotron>
+        </div>
+    )};  
+
+export default RoomList;
+
