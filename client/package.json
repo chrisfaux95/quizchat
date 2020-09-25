@@ -2,7 +2,7 @@
     "name": "quizchat",
     "version": "0.1.0",
     "private": true,
-    "proxy": "https://localhost:3001/",
+    "proxy": "https://localhost:3000/",
     "dependencies": {
       "axios": "^0.18.0",
       "react": "^16.13.1",
