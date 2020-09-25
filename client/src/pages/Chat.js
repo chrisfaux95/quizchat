@@ -5,10 +5,10 @@ import {
     Redirect,
     useLocation
   } from "react-router-dom";
-  import Login from './components/Login';
-  import RoomList from './components/RoomList';
-  import AddRoom from './components/AddRoom';
-  import ChatRoom from './components/ChatRoom';
+  import Login from '../components/Chat/Login';
+  import RoomList from '../components/Chat/RoomList';
+  import AddRoom from '../components/Chat/AddRoom';
+  import ChatRoom from '../components/Chat/ChatRoom';
   
   function SecureRoute({ children, ...rest }) {
     return (
