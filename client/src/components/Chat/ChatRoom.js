@@ -42,3 +42,13 @@ function ChatRoom(props) {
       
         fetchData();
     }, [room, roomname]);
+    useEffect(() => {
+        const fetchData = async () => {
+            setNickname(localStorage.getItem('nickname'));
+            setRoomname(room);
+            firebase.database().ref('roomusers/').orderByChild('roomname').equalTo(roomname).on('value', (resp2) => {
+              setUsers([]);
+              const roomusers = snapshotToArray(resp2);
+              setUsers(roomusers.filter(x => x.status === 'online'));
+            });
+        };
