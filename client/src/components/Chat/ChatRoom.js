@@ -78,3 +78,16 @@ function ChatRoom(props) {
         newMessage.set(chat);
         setNewchat({ roomname: '', nickname: '', message: '', date: '', type: '' });
     };
+    const onChange = (e) => {
+        e.persist();
+        setNewchat({...newchat, [e.target.name]: e.target.value});
+    }
+    const exitChat = (e) => {
+        const chat = { roomname: '', nickname: '', message: '', date: '', type: '' };
+        chat.roomname = roomname;
+        chat.nickname = nickname;
+        chat.date = Moment(new Date()).format('DD/MM/YYYY HH:mm:ss');
+        chat.message = `${nickname} leave the room`;
+        chat.type = 'exit';
+        const newMessage = firebase.database().ref('chats/').push();
+        newMessage.set(chat);
