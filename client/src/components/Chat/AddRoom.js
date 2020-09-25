@@ -12,7 +12,7 @@ import React, { useState } from 'react';
         Label, 
         Input
     } from 'reactstrap';
-    import firebase from '../Firebase';
+    import firebase from '../../Firebase';
     function AddRoom() {
         const history = useHistory();
         const [room, setRoom] = useState({ roomname: '' });

@@ -17,9 +17,9 @@ import {
     InputGroupAddon
 } from 'reactstrap';
 import Moment from 'moment';
-import firebase from '../Firebase';
+import firebase from '../../Firebase';
 import ScrollToBottom from 'react-scroll-to-bottom';
-import '../style/Styles.css';
+// import '../style/Styles.css';
 
 function ChatRoom(props) {
     const [chats, setChats] = useState([]);

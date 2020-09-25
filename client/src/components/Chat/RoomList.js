@@ -11,7 +11,7 @@ import {
     Button
 } from 'reactstrap';
 import Moment from 'moment';
-import firebase from '../Firebase';
+import firebase from '../../Firebase';
 
 function RoomList() {
     const [room, setRoom] = useState([]);
