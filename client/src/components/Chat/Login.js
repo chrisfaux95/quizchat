@@ -16,3 +16,25 @@ function Login() {
     const [creds, setCreds] = useState({ nickname: '' });
     const [showLoading, setShowLoading] = useState(false);
     const ref = firebase.database().ref('users/');
+
+    const onChange = (e) => {
+        e.persist();
+        setCreds({...creds, [e.target.name]: e.target.value});
+    }
+    const login = (e) => {
+        e.preventDefault();
+        setShowLoading(true);
+        ref.orderByChild('nickname').equalTo(creds.nickname).once('value', snapshot => {
+            if (snapshot.exists()) {
+                localStorage.setItem('nickname', creds.nickname);
+                history.push('/roomlist');
+                setShowLoading(false);
+            } else {
+                const newUser = firebase.database().ref('users/').push();
+                newUser.set(creds);
+                localStorage.setItem('nickname', creds.nickname);
+                history.push('/roomlist');
+                setShowLoading(false);
+            }
+        });
+    };
