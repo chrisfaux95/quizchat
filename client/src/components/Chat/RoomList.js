@@ -41,3 +41,32 @@ function RoomList() {
         });
 
         return returnArr;
+    }
+    const enterChatRoom = (roomname) => {
+        const chat = { roomname: '', nickname: '', message: '', date: '', type: '' };
+        chat.roomname = roomname;
+        chat.nickname = nickname;
+        chat.date = Moment(new Date()).format('DD/MM/YYYY HH:mm:ss');
+        chat.message = `${nickname} enter the room`;
+        chat.type = 'join';
+        const newMessage = firebase.database().ref('chats/').push();
+        newMessage.set(chat);
+
+        firebase.database().ref('roomusers/').orderByChild('roomname').equalTo(roomname).on('value', (resp) => {
+            let roomuser = [];
+            roomuser = snapshotToArray(resp);
+            const user = roomuser.find(x => x.nickname === nickname);
+            if (user !== undefined) {
+              const userRef = firebase.database().ref('roomusers/' + user.key);
+              userRef.update({status: 'online'});
+            } else {
+              const newroomuser = { roomname: '', nickname: '', status: '' };
+              newroomuser.roomname = roomname;
+              newroomuser.nickname = nickname;
+              newroomuser.status = 'online';
+              const newRoomUser = firebase.database().ref('roomusers/').push();
+              newRoomUser.set(newroomuser);
+            } 
+        });
+
+        
