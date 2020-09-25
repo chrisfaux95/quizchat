@@ -29,3 +29,16 @@ function ChatRoom(props) {
     const [newchat, setNewchat] = useState({ roomname: '', nickname: '', message: '', date: '', type: '' });
     const history = useHistory();
     const { room } = useParams();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setNickname(localStorage.getItem('nickname'));
+            setRoomname(room);
+            firebase.database().ref('chats/').orderByChild('roomname').equalTo(roomname).on('value', resp => {
+              setChats([]);
+              setChats(snapshotToArray(resp));
+            });
+        };
+      
+        fetchData();
+    }, [room, roomname]);
