@@ -22,6 +22,7 @@ import firebase from '../../Firebase';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { MDBContainer } from "mdbreact";
 import "./scrollbar.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import '../style/Styles.css';
 
 function ChatRoom(props) {
@@ -135,7 +136,7 @@ function ChatRoom(props) {
                     <Col xs="6">
                         <MDBContainer>
                             <Jumbotron>
-                                <div>
+                                <div className="scrollbar scrollbar-morpheus-den mt-5 mx-auto" style={{maxHeight: "400px"}}>
                                     {/* <ScrollToBottom className="ChatContent"> */}
                                     {chats.map((item, idx) => (
                                         <div key={idx} className="MessageBox">
