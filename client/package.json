@@ -5,10 +5,24 @@
   "proxy": "https://localhost:3000/",
   "dependencies": {
     "axios": "^0.18.0",
+<<<<<<< HEAD
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
     "react-router-dom": "^4.3.1"
+=======
+    "bootstrap": "^4.5.2",
+    "firebase": "^7.21.1",
+    "firechat": "^3.0.1",
+    "firestore": "^1.1.6",
+    "moment": "^2.29.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-scroll-to-bottom": "^4.0.0",
+    "reactstrap": "^8.6.0"
+>>>>>>> b04c7bbbfd0c6e4e42ba395d45e803130d28fba2
   },
   "scripts": {
     "start": "react-scripts start",
