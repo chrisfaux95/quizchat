@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const scoresRoutes = require("./scores");
+const jeopardyRoutes = require("./jeopardy");
 
-// Book routes
 router.use("/scores", scoresRoutes);
+router.use("/jeopardy", jeopardyRoutes);
 
 module.exports = router;
