@@ -133,34 +133,33 @@ function ChatRoom(props) {
                     </Col>
                     <Col xs="6">
                         <Jumbotron>
-
                             {/* <ScrollToBottom className="ChatContent"> */}
-                                <ScrollArea
-                                    speed={0.8}
-                                    className="area"
-                                    contentClassName="content"
-                                    horizontal={false}
-                                >
-                                    {chats.map((item, idx) => (
-                                        <div key={idx} className="MessageBox">
-                                            {item.type === 'join' || item.type === 'exit' ?
-                                                <div className="ChatStatus">
-                                                    <span className="ChatDate">{item.date}</span>
-                                                    <span className="ChatContentCenter">{item.message}</span>
-                                                </div> :
-                                                <div className="ChatMessage">
-                                                    <div className={`${item.nickname === nickname ? "RightBubble" : "LeftBubble"}`}>
-                                                        {item.nickname === nickname ?
-                                                            <span className="MsgName">Me</span> : <span className="MsgName">{item.nickname}</span>
-                                                        }
-                                                        <span className="MsgDate"> at {item.date}</span>
-                                                        <p>{item.message}</p>
-                                                    </div>
+                            <ScrollArea
+                                speed={0.8}
+                                className="area"
+                                contentClassName="content"
+                                horizontal={false}
+                            >
+                                {chats.map((item, idx) => (
+                                    <div key={idx} className="MessageBox">
+                                        {item.type === 'join' || item.type === 'exit' ?
+                                            <div className="ChatStatus">
+                                                <span className="ChatDate">{item.date}</span>
+                                                <span className="ChatContentCenter">{item.message}</span>
+                                            </div> :
+                                            <div className="ChatMessage">
+                                                <div className={`${item.nickname === nickname ? "RightBubble" : "LeftBubble"}`}>
+                                                    {item.nickname === nickname ?
+                                                        <span className="MsgName">Me</span> : <span className="MsgName">{item.nickname}</span>
+                                                    }
+                                                    <span className="MsgDate"> at {item.date}</span>
+                                                    <p>{item.message}</p>
                                                 </div>
-                                            }
-                                        </div>
-                                    ))}
-                                </ScrollArea>
+                                            </div>
+                                        }
+                                    </div>
+                                ))}
+                            </ScrollArea>
                             {/* </ScrollToBottom> */}
                         </Jumbotron>
                         <footer className="StickyFooter">
