@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import {
     useHistory,
     useParams
-  } from "react-router-dom";
+} from "react-router-dom";
 import {
-    Container, 
-    Row, 
+    Container,
+    Row,
     Col,
     Card,
     CardBody,
@@ -20,6 +20,9 @@ import {
 import Moment from 'moment';
 import firebase from '../../Firebase';
 import ScrollToBottom from 'react-scroll-to-bottom';
+import { MDBContainer } from "mdbreact";
+import "./scrollbar.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import '../style/Styles.css';
 
 function ChatRoom(props) {
@@ -36,11 +39,11 @@ function ChatRoom(props) {
             setNickname(localStorage.getItem('nickname'));
             setRoomname(room);
             firebase.database().ref('chats/').orderByChild('roomname').equalTo(roomname).on('value', resp => {
-              setChats([]);
-              setChats(snapshotToArray(resp));
+                setChats([]);
+                setChats(snapshotToArray(resp));
             });
         };
-      
+
         fetchData();
     }, [room, roomname]);
     useEffect(() => {
@@ -48,9 +51,9 @@ function ChatRoom(props) {
             setNickname(localStorage.getItem('nickname'));
             setRoomname(room);
             firebase.database().ref('roomusers/').orderByChild('roomname').equalTo(roomname).on('value', (resp2) => {
-              setUsers([]);
-              const roomusers = snapshotToArray(resp2);
-              setUsers(roomusers.filter(x => x.status === 'online'));
+                setUsers([]);
+                const roomusers = snapshotToArray(resp2);
+                setUsers(roomusers.filter(x => x.status === 'online'));
             });
         };
 
@@ -81,7 +84,7 @@ function ChatRoom(props) {
     };
     const onChange = (e) => {
         e.persist();
-        setNewchat({...newchat, [e.target.name]: e.target.value});
+        setNewchat({ ...newchat, [e.target.name]: e.target.value });
     }
     const exitChat = (e) => {
         const chat = { roomname: '', nickname: '', message: '', date: '', type: '' };
@@ -98,15 +101,15 @@ function ChatRoom(props) {
             roomuser = snapshotToArray(resp);
             const user = roomuser.find(x => x.nickname === nickname);
             if (user !== undefined) {
-              const userRef = firebase.database().ref('roomusers/' + user.key);
-              userRef.update({status: 'offline'});
+                const userRef = firebase.database().ref('roomusers/' + user.key);
+                userRef.update({ status: 'offline' });
             }
-          });
-      
-          history.goBack();
-      }
+        });
 
-      return (
+        history.goBack();
+    }
+
+    return (
         <div className="Container">
             <Container>
                 <Row>
@@ -131,40 +134,43 @@ function ChatRoom(props) {
                         </div>
                     </Col>
                     <Col xs="6">
-                        <Jumbotron>
-                        <ScrollToBottom className="ChatContent">
-                            {chats.map((item, idx) => (
-                                <div key={idx} className="MessageBox">
-                                    {item.type ==='join'||item.type === 'exit'?
-                                        <div className="ChatStatus">
-                                            <span className="ChatDate">{item.date}</span>
-                                            <span className="ChatContentCenter">{item.message}</span>
-                                        </div>:
-                                        <div className="ChatMessage">
-                                            <div className={`${item.nickname === nickname? "RightBubble":"LeftBubble"}`}>
-                                            {item.nickname === nickname ? 
-                                                <span className="MsgName">Me</span>:<span className="MsgName">{item.nickname}</span>
+                        <MDBContainer>
+                            <Jumbotron>
+                                <div className="scrollbar scrollbar-morpheus-den mt-5 mx-auto" style={{ maxHeight: "400px" }}>
+                                    {/* <ScrollToBottom className="ChatContent"> */}
+                                    {chats.map((item, idx) => (
+                                        <div key={idx} className="MessageBox">
+                                            {item.type === 'join' || item.type === 'exit' ?
+                                                <div className="ChatStatus">
+                                                    <span className="ChatDate">{item.date}</span>
+                                                    <span className="ChatContentCenter">{item.message}</span>
+                                                </div> :
+                                                <div className="ChatMessage">
+                                                    <div className={`${item.nickname === nickname ? "RightBubble" : "LeftBubble"}`}>
+                                                        {item.nickname === nickname ?
+                                                            <span className="MsgName">Me</span> : <span className="MsgName">{item.nickname}</span>
+                                                        }
+                                                        <span className="MsgDate"> at {item.date}</span>
+                                                        <p>{item.message}</p>
+                                                    </div>
+                                                </div>
                                             }
-                                            <span className="MsgDate"> at {item.date}</span>
-                                            <p>{item.message}</p>
-                                            </div>
                                         </div>
-                                    }
+                                    ))}
+                                    {/* </ScrollToBottom> */}
                                 </div>
-                            ))}
-                        </ScrollToBottom>
+                            </Jumbotron>
+                        </MDBContainer>
                         <footer className="StickyFooter">
                             <Form className="MessageForm" onSubmit={submitMessage}>
                                 <InputGroup>
-                                <Input type="text" name="message" id="message" placeholder="Enter message here" value={newchat.message} onChange={onChange} />
+                                    <Input type="text" name="message" id="message" placeholder="Enter message here" value={newchat.message} onChange={onChange} />
                                     <InputGroupAddon addonType="append">
                                         <Button variant="primary" type="submit">Send</Button>
                                     </InputGroupAddon>
                                 </InputGroup>
                             </Form>
-                            
                         </footer>
-                        </Jumbotron>
                     </Col>
                     <Col xs="3">
                         <div>
