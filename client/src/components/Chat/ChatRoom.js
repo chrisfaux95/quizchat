@@ -136,7 +136,7 @@ function ChatRoom(props) {
                     <Col xs="6">
                         <MDBContainer>
                             <Jumbotron>
-                                <div className="scrollbar scrollbar-morpheus-den mt-5 mx-auto" style={{maxHeight: "400px"}}>
+                                <div className="scrollbar scrollbar-morpheus-den mt-5 mx-auto" style={{ maxHeight: "400px" }}>
                                     {/* <ScrollToBottom className="ChatContent"> */}
                                     {chats.map((item, idx) => (
                                         <div key={idx} className="MessageBox">
