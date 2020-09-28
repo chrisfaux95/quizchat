@@ -23,6 +23,7 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 import { MDBContainer } from "mdbreact";
 import "./scrollbar.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import RoomList from "./RoomList"
 // import '../style/Styles.css';
 
 function ChatRoom(props) {
@@ -110,29 +111,12 @@ function ChatRoom(props) {
     }
 
     return (
-        <div className="Container">
-            <Container>
+                
+        <Container>
                 <Row>
-                    <Col xs="3">
-                        <div>
-                            <Card className="ServerCard">
-                                <CardBody>
-                                    <CardSubtitle>
-                                        <Button variant="primary" type="button" onClick={() => { exitChat() }}>
-                                            Exit Chat
-                                        </Button>
-                                    </CardSubtitle>
-                                </CardBody>
-                            </Card>
-                            {users.map((item, idx) => (
-                                <Card key={idx} className="UsersCard">
-                                    <CardBody>
-                                        <CardSubtitle>{item.nickname}</CardSubtitle>
-                                    </CardBody>
-                                </Card>
-                            ))}
-                        </div>
-                    </Col>
+                <Col xs="3">
+                < RoomList />
+                </Col>
                     <Col xs="6">
                         <MDBContainer>
                             <Jumbotron>
@@ -194,7 +178,7 @@ function ChatRoom(props) {
                     </Col>
                 </Row>
             </Container>
-        </div>
+        
     );
 }
 

@@ -4,11 +4,18 @@ import {
     useHistory
   } from "react-router-dom";
 import {
+    Container,
+    Row,
+    Col,
+    Card,
+    CardBody,
+    CardSubtitle,
     Jumbotron,
     Spinner,
     ListGroup,
     ListGroupItem,
-    Button
+    Button,
+    
 } from 'reactstrap';
 import Moment from 'moment';
 import firebase from '../../Firebase';
@@ -76,24 +83,59 @@ function RoomList() {
         history.push('/login');
     }
     return (
-        <div>
-            {showLoading &&
-                <Spinner color="primary" />
-            }
-            <Jumbotron>
-                <h3>{nickname} <Button onClick={() => { logout() }}>Logout</Button></h3>
-                <h2>Room List</h2>
-                <div>
-                    <Link to="/addroom">Add Room</Link>
-                </div>
-                <ListGroup>
-                    {room.map((item, idx) => (
+        // <div>
+        //     {showLoading &&
+        //         <Spinner color="primary" />
+        //     }
+        //     <Jumbotron>
+        //         {/* <h3>{nickname} <Button onClick={() => { logout() }}>Logout</Button></h3> */}
+        //         <h2>Room List</h2>
+        //         <div>
+        //             <Link to="/addroom">Add Room</Link>
+        //         </div>
+        //         <ListGroup>
+        //             {room.map((item, idx) => (
+        //                 <ListGroupItem key={idx} action onClick={() => { enterChatRoom(item.roomname) }}>{item.roomname}</ListGroupItem>
+        //             ))}
+        //         </ListGroup>
+        //     </Jumbotron>
+        // </div>
+    
+
+    
+            
+                    
+                        <div>
+                            <Card className="ServerCard">
+                                <CardBody>
+                                    <CardSubtitle>
+                                        <Button variant="primary" type="button" onClick={() => { logout() }}>
+                                            Exit Chat
+                                        </Button>
+                                    </CardSubtitle>
+                                </CardBody>
+                            </Card>
+                            
+                                    <Card 
+                                    // key={idx} 
+                                    className="RoomList">
+                                    <CardBody>
+                                    <Link to="/addroom">Add Room</Link>
+                                        <ListGroup>
+                                    {room.map((item, idx) => (
                         <ListGroupItem key={idx} action onClick={() => { enterChatRoom(item.roomname) }}>{item.roomname}</ListGroupItem>
                     ))}
                 </ListGroup>
-            </Jumbotron>
-        </div>
-    )};  
+                                        <CardSubtitle>
+                                            {/* {item.roomname} */}
+                                        </CardSubtitle>
+                                    </CardBody>
+                                </Card>
+                        
+                        </div>
+                       
+                    
+                    )};
 
 export default RoomList;
 
