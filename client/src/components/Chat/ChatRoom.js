@@ -20,7 +20,8 @@ import {
 import Moment from 'moment';
 import firebase from '../../Firebase';
 import ScrollToBottom from 'react-scroll-to-bottom';
-import ScrollArea from 'react-scrollbar';
+import { MBDContainer } from "mbdreact";
+import "./scrollbar.css";
 // import '../style/Styles.css';
 
 function ChatRoom(props) {
@@ -134,12 +135,7 @@ function ChatRoom(props) {
                     <Col xs="6">
                         <Jumbotron>
                             {/* <ScrollToBottom className="ChatContent"> */}
-                            <ScrollArea
-                                speed={0.8}
-                                className="area"
-                                contentClassName="content"
-                                horizontal={false}
-                            >
+                            <MBDContainer>
                                 {chats.map((item, idx) => (
                                     <div key={idx} className="MessageBox">
                                         {item.type === 'join' || item.type === 'exit' ?
@@ -159,7 +155,7 @@ function ChatRoom(props) {
                                         }
                                     </div>
                                 ))}
-                            </ScrollArea>
+                            </MBDContainer>
                             {/* </ScrollToBottom> */}
                         </Jumbotron>
                         <footer className="StickyFooter">
