@@ -14,7 +14,8 @@ import {
     Form,
     InputGroup,
     Input,
-    InputGroupAddon
+    InputGroupAddon,
+    Jumbotron
 } from 'reactstrap';
 import Moment from 'moment';
 import firebase from '../../Firebase';
@@ -109,9 +110,9 @@ function ChatRoom(props) {
         <div className="Container">
             <Container>
                 <Row>
-                    <Col xs="4">
+                    <Col xs="3">
                         <div>
-                            <Card className="UsersCard">
+                            <Card className="ServerCard">
                                 <CardBody>
                                     <CardSubtitle>
                                         <Button variant="primary" type="button" onClick={() => { exitChat() }}>
@@ -129,7 +130,8 @@ function ChatRoom(props) {
                             ))}
                         </div>
                     </Col>
-                    <Col xs="8">
+                    <Col xs="6">
+                        <Jumbotron>
                         <ScrollToBottom className="ChatContent">
                             {chats.map((item, idx) => (
                                 <div key={idx} className="MessageBox">
@@ -160,7 +162,29 @@ function ChatRoom(props) {
                                     </InputGroupAddon>
                                 </InputGroup>
                             </Form>
+                            
                         </footer>
+                        </Jumbotron>
+                    </Col>
+                    <Col xs="3">
+                        <div>
+                            <Card className="UsersCard">
+                                <CardBody>
+                                    <CardSubtitle>
+                                        <Button variant="primary" type="button" onClick={() => { exitChat() }}>
+                                            Exit Chat
+                                        </Button>
+                                    </CardSubtitle>
+                                </CardBody>
+                            </Card>
+                            {users.map((item, idx) => (
+                                <Card key={idx} className="UsersCard">
+                                    <CardBody>
+                                        <CardSubtitle>{item.nickname}</CardSubtitle>
+                                    </CardBody>
+                                </Card>
+                            ))}
+                        </div>
                     </Col>
                 </Row>
             </Container>
