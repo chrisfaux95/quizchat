@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {
     Link,
     useHistory
-  } from "react-router-dom";
+} from "react-router-dom";
 import {
     Container,
     Row,
@@ -15,10 +15,11 @@ import {
     ListGroup,
     ListGroupItem,
     Button,
-    
+
 } from 'reactstrap';
 import Moment from 'moment';
 import firebase from '../../Firebase';
+import AddRoom from './AddRoom';
 
 function RoomList() {
     const [room, setRoom] = useState([]);
@@ -35,9 +36,9 @@ function RoomList() {
                 setShowLoading(false);
             });
         };
-        
+
         fetchData();
-    }, []); 
+    }, []);
     const snapshotToArray = (snapshot) => {
         const returnArr = [];
 
@@ -64,16 +65,16 @@ function RoomList() {
             roomuser = snapshotToArray(resp);
             const user = roomuser.find(x => x.nickname === nickname);
             if (user !== undefined) {
-              const userRef = firebase.database().ref('roomusers/' + user.key);
-              userRef.update({status: 'online'});
+                const userRef = firebase.database().ref('roomusers/' + user.key);
+                userRef.update({ status: 'online' });
             } else {
-              const newroomuser = { roomname: '', nickname: '', status: '' };
-              newroomuser.roomname = roomname;
-              newroomuser.nickname = nickname;
-              newroomuser.status = 'online';
-              const newRoomUser = firebase.database().ref('roomusers/').push();
-              newRoomUser.set(newroomuser);
-            } 
+                const newroomuser = { roomname: '', nickname: '', status: '' };
+                newroomuser.roomname = roomname;
+                newroomuser.nickname = nickname;
+                newroomuser.status = 'online';
+                const newRoomUser = firebase.database().ref('roomusers/').push();
+                newRoomUser.set(newroomuser);
+            }
         });
 
         history.push('/chatroom/' + roomname);
@@ -100,42 +101,43 @@ function RoomList() {
         //         </ListGroup>
         //     </Jumbotron>
         // </div>
-    
 
-    
-            
-                    
-                        <div>
-                            <Card className="ServerCard">
-                                <CardBody>
-                                    <CardSubtitle>
-                                        <Button variant="primary" type="button" onClick={() => { logout() }}>
-                                            Exit Chat
+
+
+
+
+        <div>
+            <Card className="ServerCard">
+                <CardBody>
+                    <CardSubtitle>
+                        <Button variant="primary" type="button" onClick={() => { logout() }}>
+                            Exit Chat
                                         </Button>
-                                    </CardSubtitle>
-                                </CardBody>
-                            </Card>
-                            
-                                    <Card 
-                                    // key={idx} 
-                                    className="RoomList">
-                                    <CardBody>
-                                    <Link to="/addroom">Add Room</Link>
-                                        <ListGroup>
-                                    {room.map((item, idx) => (
-                        <ListGroupItem key={idx} action onClick={() => { enterChatRoom(item.roomname) }}>{item.roomname}</ListGroupItem>
-                    ))}
-                </ListGroup>
-                                        <CardSubtitle>
-                                            {/* {item.roomname} */}
-                                        </CardSubtitle>
-                                    </CardBody>
-                                </Card>
-                        
-                        </div>
-                       
-                    
-                    )};
+                    </CardSubtitle>
+                </CardBody>
+            </Card>
+
+            <Card
+                // key={idx} 
+                className="RoomList">
+                <CardBody>
+                    <AddRoom />
+                    <ListGroup>
+                        {room.map((item, idx) => (
+                            <ListGroupItem key={idx} action onClick={() => { enterChatRoom(item.roomname) }}>{item.roomname}</ListGroupItem>
+                        ))}
+                    </ListGroup>
+                    <CardSubtitle>
+                        {/* {item.roomname} */}
+                    </CardSubtitle>
+                </CardBody>
+            </Card>
+
+        </div>
+
+
+    )
+};
 
 export default RoomList;
 
