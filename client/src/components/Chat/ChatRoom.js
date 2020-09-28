@@ -115,7 +115,7 @@ function ChatRoom(props) {
         <Container>
                 <Row>
                 <Col xs="3">
-                { RoomList }
+                < RoomList />
                 </Col>
                     <Col xs="6">
                         <MDBContainer>
