@@ -20,7 +20,7 @@ import {
 import Moment from 'moment';
 import firebase from '../../Firebase';
 import ScrollToBottom from 'react-scroll-to-bottom';
-import { MBDContainer } from "mbdreact";
+import { MDBContainer } from "mdbreact";
 import "./scrollbar.css";
 // import '../style/Styles.css';
 
@@ -133,31 +133,33 @@ function ChatRoom(props) {
                         </div>
                     </Col>
                     <Col xs="6">
-                        <Jumbotron>
-                            {/* <ScrollToBottom className="ChatContent"> */}
-                            <MBDContainer>
-                                {chats.map((item, idx) => (
-                                    <div key={idx} className="MessageBox">
-                                        {item.type === 'join' || item.type === 'exit' ?
-                                            <div className="ChatStatus">
-                                                <span className="ChatDate">{item.date}</span>
-                                                <span className="ChatContentCenter">{item.message}</span>
-                                            </div> :
-                                            <div className="ChatMessage">
-                                                <div className={`${item.nickname === nickname ? "RightBubble" : "LeftBubble"}`}>
-                                                    {item.nickname === nickname ?
-                                                        <span className="MsgName">Me</span> : <span className="MsgName">{item.nickname}</span>
-                                                    }
-                                                    <span className="MsgDate"> at {item.date}</span>
-                                                    <p>{item.message}</p>
+                        <MDBContainer>
+                            <Jumbotron>
+                                <div>
+                                    {/* <ScrollToBottom className="ChatContent"> */}
+                                    {chats.map((item, idx) => (
+                                        <div key={idx} className="MessageBox">
+                                            {item.type === 'join' || item.type === 'exit' ?
+                                                <div className="ChatStatus">
+                                                    <span className="ChatDate">{item.date}</span>
+                                                    <span className="ChatContentCenter">{item.message}</span>
+                                                </div> :
+                                                <div className="ChatMessage">
+                                                    <div className={`${item.nickname === nickname ? "RightBubble" : "LeftBubble"}`}>
+                                                        {item.nickname === nickname ?
+                                                            <span className="MsgName">Me</span> : <span className="MsgName">{item.nickname}</span>
+                                                        }
+                                                        <span className="MsgDate"> at {item.date}</span>
+                                                        <p>{item.message}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        }
-                                    </div>
-                                ))}
-                            </MBDContainer>
-                            {/* </ScrollToBottom> */}
-                        </Jumbotron>
+                                            }
+                                        </div>
+                                    ))}
+                                    {/* </ScrollToBottom> */}
+                                </div>
+                            </Jumbotron>
+                        </MDBContainer>
                         <footer className="StickyFooter">
                             <Form className="MessageForm" onSubmit={submitMessage}>
                                 <InputGroup>
