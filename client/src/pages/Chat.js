@@ -7,7 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Login from "../components/Chat/Login";
-// import RoomList from "../components/Chat/RoomList";
+import RoomList from "../components/Chat/RoomList";
 import AddRoom from "../components/Chat/AddRoom";
 import ChatRoom from "../components/Chat/ChatRoom";
 
@@ -47,12 +47,12 @@ function Chat() {
           <Route path="/login">
             <Login />
           </Route>
-          {/* <SecureRoute path="/roomlist">
+          <SecureRoute path="/roomlist">
             <RoomList /> 
-          </SecureRoute> */}
-          <SecureRoute path="/addroom">
-            <AddRoom />
           </SecureRoute>
+          {/* <SecureRoute path="/addroom">
+            <AddRoom />
+          </SecureRoute> */}
           <SecureRoute path="/chatroom/:room">
             <ChatRoom />
           </SecureRoute>
