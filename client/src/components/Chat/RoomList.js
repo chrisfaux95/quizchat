@@ -18,6 +18,7 @@ import {
 
 } from 'reactstrap';
 import Moment from 'moment';
+import NavigationBar from "../Navbar";
 import firebase from '../../Firebase';
 import AddRoom from './AddRoom';
 import ModalExample from './Framework';
@@ -108,7 +109,10 @@ function RoomList() {
 
 
         <div>
+
+            <NavigationBar/>
             <Card className="ServerCard" id="server-card">
+
                 <CardBody>
                     <CardSubtitle>
                         <Button variant="primary" type="button" onClick={() => { logout() }}>
