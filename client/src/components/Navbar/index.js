@@ -28,18 +28,18 @@ const Navigation = (props) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/components/">Components</NavLink>
+                            <NavLink href="/roomlist">Room List</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                            <NavLink href="/highscores">High Scores</NavLink>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav caret>
-                                Options
+                                Games
               </DropdownToggle>
                             <DropdownMenu right>
-                                <DropdownItem>
-                                    Option 1
+                                <DropdownItem href="/quiz">
+                                    Quiz
                 </DropdownItem>
                                 <DropdownItem>
                                     Option 2

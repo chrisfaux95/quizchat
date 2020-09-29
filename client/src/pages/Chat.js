@@ -43,7 +43,7 @@ function Chat() {
       <div>
         {/* <Redirect
           to={{
-            pathname: "/roomlist",
+            pathname: "/login",
             state: { from: location },
           }}
         /> */}
