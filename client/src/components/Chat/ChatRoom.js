@@ -24,6 +24,7 @@ import { MDBContainer } from "mdbreact";
 import "./scrollbar.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RoomList from "./RoomList"
+import ChatBubble from '../../PopupChat.js/chatBubble';
 // import '../style/Styles.css';
 
 function ChatRoom(props) {
@@ -177,6 +178,7 @@ function ChatRoom(props) {
                         </div>
                     </Col>
                 </Row>
+                <ChatBubble />
             </Container>
         
     );
