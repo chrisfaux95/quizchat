@@ -10,6 +10,7 @@ import Login from "../components/Chat/Login";
 import RoomList from "../components/Chat/RoomList";
 import AddRoom from "../components/Chat/AddRoom";
 import ChatRoom from "../components/Chat/ChatRoom";
+import Navigation from "../components/Navbar";
 import QuizPg from "./Quiz";
 
 function SecureRoute({ children, ...rest }) {
@@ -20,13 +21,13 @@ function SecureRoute({ children, ...rest }) {
         localStorage.getItem("nickname") ? (
           children
         ) : (
-          <Redirect
-            to={{
-              pathname: "/login",
-              state: { from: location },
-            }}
-          />
-        )
+            <Redirect
+              to={{
+                pathname: "/login",
+                state: { from: location },
+              }}
+            />
+          )
       }
     />
   );
@@ -49,10 +50,11 @@ function Chat() {
             <Login />
           </Route>
           <Route path="/quiz">
-        <QuizPg/>
+            <Navigation />
+            <QuizPg />
           </Route>
           <SecureRoute path="/roomlist">
-            <RoomList /> 
+            <RoomList />
           </SecureRoute>
           {/* <SecureRoute path="/addroom">
             <AddRoom />
