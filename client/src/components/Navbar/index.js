@@ -13,6 +13,7 @@ import {
     DropdownItem,
     NavbarText
 } from "reactstrap";
+import "./style.css";
 
 const Navigation = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +21,9 @@ const Navigation = (props) => {
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div>
-            <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">reactstrap</NavbarBrand>
+            <Navbar color="primary" light expand="md">
+                <NavbarBrand><img className="logo" src="Triviatastic.png"/>
+                </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
