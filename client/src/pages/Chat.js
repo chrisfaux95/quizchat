@@ -37,22 +37,22 @@ function Chat() {
   return (
     <Router>
       <div>
-        <Redirect
+        {/* <Redirect
           to={{
             pathname: "/roomlist",
             state: { from: location },
           }}
-        />
+        /> */}
         <Switch>
           <Route path="/login">
             <Login />
           </Route>
           <SecureRoute path="/roomlist">
-            <RoomList />
+            <RoomList /> 
           </SecureRoute>
-          <SecureRoute path="/addroom">
+          {/* <SecureRoute path="/addroom">
             <AddRoom />
-          </SecureRoute>
+          </SecureRoute> */}
           <SecureRoute path="/chatroom/:room">
             <ChatRoom />
           </SecureRoute>
