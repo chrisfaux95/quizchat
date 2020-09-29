@@ -14,7 +14,6 @@ import firebase from '../../Firebase';
 function Login() {
     const history = useHistory();
     const [creds, setCreds] = useState({ nickname: '' });
-
     const [showLoading, setShowLoading] = useState(false);
     const ref = firebase.database().ref('users/');
 
@@ -28,16 +27,12 @@ function Login() {
         ref.orderByChild('nickname').equalTo(creds.nickname).once('value', snapshot => {
             if (snapshot.exists()) {
                 localStorage.setItem('nickname', creds.nickname);
-
                 history.push('/roomlist');
                 setShowLoading(false);
             } else {
                 const newUser = firebase.database().ref('users/').push();
-                const newFriends = firebase.database().ref('users/').push();
-                newUser.set( creds );
-                newFriends.set (creds, ({friends: {}}) )
-                localStorage.setItem('nickname', creds.nickname );
-                localStorage.setItem('', creds.friend );
+                newUser.set(creds);
+                localStorage.setItem('nickname', creds.nickname);
                 history.push('/roomlist');
                 setShowLoading(false);
             }

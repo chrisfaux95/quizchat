@@ -11,7 +11,8 @@ const JeopardySchema = new Schema({
     value: {type: String},
     question: {type: String},
     answer: {type: String}
-});
+},
+{ collection: "Jeopardy" });
 
 const Jeopardy = mongoose.model("Jeopardy", JeopardySchema);
 
