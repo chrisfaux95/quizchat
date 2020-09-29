@@ -21,6 +21,7 @@ import Moment from 'moment';
 import NavigationBar from "../Navbar";
 import firebase from '../../Firebase';
 import AddRoom from './AddRoom';
+import ModalExample from './Framework';
 
 function RoomList() {
     const [room, setRoom] = useState([]);
@@ -108,8 +109,10 @@ function RoomList() {
 
 
         <div>
+
             <NavigationBar/>
-            <Card className="ServerCard">
+            <Card className="ServerCard" id="server-card">
+
                 <CardBody>
                     <CardSubtitle>
                         <Button variant="primary" type="button" onClick={() => { logout() }}>
@@ -121,12 +124,12 @@ function RoomList() {
 
             <Card
                 // key={idx} 
-                className="RoomList">
+                className="RoomList" id="room-list">
                 <CardBody>
-                    <AddRoom />
+                    <ModalExample />
                     <ListGroup>
                         {room.map((item, idx) => (
-                            <ListGroupItem key={idx} action onClick={() => { enterChatRoom(item.roomname) }}>{item.roomname}</ListGroupItem>
+                            <ListGroupItem id="list-group" key={idx} action onClick={() => { enterChatRoom(item.roomname) }}>{item.roomname}</ListGroupItem>
                         ))}
                     </ListGroup>
                     <CardSubtitle>
