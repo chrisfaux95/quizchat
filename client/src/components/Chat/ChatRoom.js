@@ -123,8 +123,8 @@ function ChatRoom(props) {
                 </Col>
                     <Col xs="6">
                         <MDBContainer id="chat-box">
-                            <Jumbotron className ="mpxy-0">
-                                <div className="scrollbar scrollbar-morpheus-den mt-5 mx-auto" style={{ maxHeight: "400px" }}>
+                            <Jumbotron className ="mpxy-0" id="jumbo-1">
+                                <div className="scrollbar scrollbar-morpheus-den mt-5 mx-auto" style={{ maxHeight: "563px" }}>
                                     {/* <ScrollToBottom className="ChatContent"> */}
                                     {chats.map((item, idx) => (
                                         <div key={idx} className="MessageBox">
