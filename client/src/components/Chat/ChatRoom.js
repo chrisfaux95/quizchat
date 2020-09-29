@@ -112,14 +112,13 @@ function ChatRoom(props) {
 
     return (
                 
-        <Container className="mpx-0" fluid={true} >
+        <Container className="mpx-0" fluid={true}  id="container-block">
                 <Row className="no-gutters">
                 <Col xs="3">
                 < RoomList />
-                
                 </Col>
                     <Col xs="6">
-                        <MDBContainer>
+                        <MDBContainer id="chat-box">
                             <Jumbotron className ="mpxy-0">
                                 <div className="scrollbar scrollbar-morpheus-den mt-5 mx-auto" style={{ maxHeight: "400px" }}>
                                     {/* <ScrollToBottom className="ChatContent"> */}
@@ -148,7 +147,7 @@ function ChatRoom(props) {
                         </MDBContainer>
                         <footer className="StickyFooter">
                             <Form className="MessageForm" onSubmit={submitMessage}>
-                                <InputGroup>
+                                <InputGroup id="input-box">
                                     <Input type="text" name="message" id="message" placeholder="Enter message here" value={newchat.message} onChange={onChange} />
                                     <InputGroupAddon addonType="append">
                                         <Button variant="primary" type="submit">Send</Button>
@@ -158,8 +157,8 @@ function ChatRoom(props) {
                         </footer>
                     </Col>
                     <Col xs="3">
-                        <div>
-                            <Card className="UsersCard">
+                        <div id="div-cards">
+                            <Card className="UsersCard" id="user-card">
                                 <CardBody>
                                     <CardSubtitle>
                                         <Button variant="primary" type="button" onClick={() => { exitChat() }}>
@@ -169,7 +168,7 @@ function ChatRoom(props) {
                                 </CardBody>
                             </Card>
                             {users.map((item, idx) => (
-                                <Card key={idx} className="UsersCard">
+                                <Card id="user-cards" key={idx} className="UsersCard">
                                     <CardBody>
                                         <CardSubtitle>{item.nickname}</CardSubtitle>
                                     </CardBody>
