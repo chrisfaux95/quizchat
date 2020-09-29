@@ -112,14 +112,15 @@ function ChatRoom(props) {
 
     return (
                 
-        <Container>
-                <Row>
+        <Container className="mpx-0" fluid={true} >
+                <Row className="no-gutters">
                 <Col xs="3">
                 < RoomList />
+                
                 </Col>
                     <Col xs="6">
                         <MDBContainer>
-                            <Jumbotron>
+                            <Jumbotron className ="mpxy-0">
                                 <div className="scrollbar scrollbar-morpheus-den mt-5 mx-auto" style={{ maxHeight: "400px" }}>
                                     {/* <ScrollToBottom className="ChatContent"> */}
                                     {chats.map((item, idx) => (
