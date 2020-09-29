@@ -12,6 +12,8 @@ import AddRoom from "../components/Chat/AddRoom";
 import ChatRoom from "../components/Chat/ChatRoom";
 import Navigation from "../components/Navbar";
 import QuizPg from "./Quiz";
+import HighScoresPg from "./HighScores";
+
 
 function SecureRoute({ children, ...rest }) {
   return (
@@ -52,6 +54,10 @@ function Chat() {
           <Route path="/quiz">
             <Navigation />
             <QuizPg />
+          </Route>
+          <Route path="/highscores">
+            <Navigation />
+            <HighScoresPg />
           </Route>
           <SecureRoute path="/roomlist">
             <RoomList />
