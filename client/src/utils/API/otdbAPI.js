@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
     getQuiz: function (catNum, difficulty) {
         axios.get("https://opentdb.com/api_count.php?category=" + catNum).then(res => {
-            let qAmt = 10;
+            let qAmt;
             switch (difficulty) {
                 case 'easy':
                     let qTot = res.category_question_count.easy_question_count
@@ -25,5 +25,5 @@ export default {
             return axios.get(`https://opentdb.com/api.php?amount=${qAmt}&category=${catNum}&difficulty=${difficulty}`)
         })
     },
-    
+
 }
