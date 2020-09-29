@@ -18,6 +18,7 @@ import {
 
 } from 'reactstrap';
 import Moment from 'moment';
+import NavigationBar from "../Navbar";
 import firebase from '../../Firebase';
 import AddRoom from './AddRoom';
 
@@ -107,6 +108,7 @@ function RoomList() {
 
 
         <div>
+            <NavigationBar/>
             <Card className="ServerCard">
                 <CardBody>
                     <CardSubtitle>
