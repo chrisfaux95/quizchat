@@ -5,7 +5,7 @@ router.route("/")
     .get(scoreController.findAllRecent)
     .post(scoreController.create);
 
-router.route("/:id")
+router.route("/byID/:id")
     .get(scoreController.findById)
     .delete(scoreController.remove);
 
