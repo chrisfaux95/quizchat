@@ -46,7 +46,6 @@ function AddRoom() {
     }
     return (
         <div>
-            <Navigation />
             {showLoading &&
                 <Spinner color="primary" />
             }
