@@ -1,9 +1,14 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Chat from "./pages/Chat"
+import Navigation from "./components/Navbar/index"
 
 export default function App(){
-    return (<Chat />
+    return (
+    <Router>
+    <Navigation />
+    <Chat />
+    </Router>
 
 //         <Router>
 //             <div>

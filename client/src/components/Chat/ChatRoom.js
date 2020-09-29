@@ -15,7 +15,8 @@ import {
     InputGroup,
     Input,
     InputGroupAddon,
-    Jumbotron
+    Jumbotron,
+    NavigationBar
 } from 'reactstrap';
 import Moment from 'moment';
 import firebase from '../../Firebase';
@@ -24,6 +25,7 @@ import { MDBContainer } from "mdbreact";
 import "./scrollbar.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RoomList from "./RoomList"
+import Navigation from "../Navbar/index"
 import ChatBubble from '../../PopupChat.js/chatBubble';
 // import '../style/Styles.css';
 
@@ -112,8 +114,9 @@ function ChatRoom(props) {
     }
 
     return (
-                
+        
         <Container className="mpx-0" fluid={true}  id="container-block">
+
                 <Row className="no-gutters">
                 <Col xs="3">
                 < RoomList />

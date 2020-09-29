@@ -110,7 +110,7 @@ function RoomList() {
 
         <div>
 
-            <NavigationBar/>
+            
             <Card className="ServerCard" id="server-card">
 
                 <CardBody>
