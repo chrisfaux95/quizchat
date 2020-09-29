@@ -10,6 +10,7 @@ import Login from "../components/Chat/Login";
 import RoomList from "../components/Chat/RoomList";
 import AddRoom from "../components/Chat/AddRoom";
 import ChatRoom from "../components/Chat/ChatRoom";
+import QuizPg from "./Quiz";
 
 function SecureRoute({ children, ...rest }) {
   return (
@@ -46,6 +47,9 @@ function Chat() {
         <Switch>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/quiz">
+        <QuizPg/>
           </Route>
           <SecureRoute path="/roomlist">
             <RoomList /> 
