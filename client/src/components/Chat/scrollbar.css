@@ -33,6 +33,14 @@
   background-image: -webkit-linear-gradient(bottom, #30cfd0 0%, #330867 100%);
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); }
 
+  #container-block{
+    padding: 0px 0px;
+  }
+
+  #jumbo-1{
+    padding: 5px;
+    margin: 2px;
+  }
 
   #server-card{
     border-bottom: transparent;
@@ -41,6 +49,8 @@
 
   #room-list{
     border-top: transparent;
+    height: 590px;
+    min-height: 300px;
   }
 
   #list-group {
@@ -59,6 +69,7 @@
     border:1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
     position: relative;
+    height: 662px;
   }
 
   #chat-box{
@@ -66,6 +77,3 @@
     padding-left: 0px;
   }
 
-  #input-box{
-    bottom: 71px;
-  }
