@@ -1,5 +1,4 @@
 import jeopardyAPI from './jeopardyAPI';
-import jeopardyAPI from './jeopardyAPI';
 import otdbAPI from "./otdbAPI";
 import scoresAPI from "./scoresAPI"
 
