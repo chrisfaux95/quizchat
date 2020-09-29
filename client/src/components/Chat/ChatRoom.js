@@ -113,7 +113,7 @@ function ChatRoom(props) {
 
     return (
                 
-        <Container className="mpx-0" fluid={true} >
+        <Container className="mpx-0 " fluid={true} >
                 <Row className="no-gutters">
                 <Col xs="3">
                 < RoomList />

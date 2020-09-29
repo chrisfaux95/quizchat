@@ -1,7 +1,12 @@
 import React, {Component} from 'react'
 import {Launcher} from 'react-chat-window'
+// import firebase from '../../Firebase';
  
 class ChatBubble extends Component {
+
+  // const [chats, setChats] = useState([]);
+  // const [users, setUsers] = useState([]);
+  // const [nickname, setNickname] = useState('');
  
   constructor() {
     super();
