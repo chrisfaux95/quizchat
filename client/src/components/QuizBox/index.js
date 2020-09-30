@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Row, Col, Container } from 'reactstrap';
+import { Button, Container } from 'reactstrap';
 import { shuffleArray } from '../../utils/quizFunctions';
 
 export default function QuizBox(props) {
@@ -9,7 +9,7 @@ export default function QuizBox(props) {
             <h1>{category}</h1>
             <hr />
             <br />
-            <QuestionBox />
+            <QuestionBox question={question} answers={answers} />
         </Container>
     )
 }
