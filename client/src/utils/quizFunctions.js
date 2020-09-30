@@ -1,4 +1,4 @@
-import { otdbAPI } from './API';
+import otdbAPI from './API/otdbAPI';
 
 // EXPORTS LIST OF CATEGORIES FOR OTDB SORTED ALPHABETICALLY
 export function getCategories() {

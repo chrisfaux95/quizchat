@@ -17,24 +17,25 @@ export default {
     },
     getQAmt: function (catNum, difficulty) {
         var qAmt;
+        let qTot
         axios.get(`https://opentdb.com/api_count.php?category=${catNum}`).then(
             res => {
                 switch (difficulty) {
                     case 'easy':
-                        let qTot = res.category_question_count.easy_question_count
+                        qTot = res.category_question_count.easy_question_count;
                         qAmt = qTot < 10 ? qTot : 10;
                         break;
                     case 'medium':
-                        let qTot = res.category_question_count.medium_question_count
+                        qTot = res.category_question_count.medium_question_count;
                         qAmt = qTot < 10 ? qTot : 10;
                         break;
                     case 'hard':
-                        let qTot = res.category_question_count.hard_question_count;
+                        qTot = res.category_question_count.hard_question_count;
                         qAmt = qTot < 10 ? qTot : 10;
                         break;
                     case 'any':
                     default:
-                        let qTot = res.category_question_count.total_question_count;
+                        qTot = res.category_question_count.total_question_count;
                         qAmt = qTot < 10 ? qTot : 10;
                 }
             }
