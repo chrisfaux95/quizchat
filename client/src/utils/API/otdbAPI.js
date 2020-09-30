@@ -17,7 +17,7 @@ export default {
                     let qTot = res.category_question_count.hard_question_count;
                     qAmt = qTot < 10 ? qTot : 10;
                     break;
-                case 'all':
+                case 'any':
                 default:
                     let qTot = res.category_question_count.total_question_count;
                     qAmt = qTot < 10 ? qTot : 10;
