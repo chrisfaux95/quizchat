@@ -29,7 +29,7 @@ export default class QuizForm extends Component {
 
     handleFormSubmit = formEvent => {
         formEvent.preventDefault();
-        console.log(this.state.selectedCat, this.state.selectedDiff);
+        this.props.handleQuizForm(this.state.selectedCat, this.state.selectedDiff);
     }
 
 
