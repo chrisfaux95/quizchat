@@ -1,0 +1,13 @@
+$height: 28px;
+
+footer {
+  height: $height;
+  line-height: $height;
+  text-align: center;
+  background-color: black;
+  color: white;
+
+  .icon {
+    padding: 0 4px;
+  }
+}
