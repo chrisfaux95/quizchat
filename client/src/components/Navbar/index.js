@@ -41,8 +41,8 @@ const Navigation = (props) => {
                                 <DropdownItem href="/quiz" id="dropdown">
                                     Quiz
                 </DropdownItem>
-                                <DropdownItem>
-                                    Option 2
+                                <DropdownItem href="/minesweeper">
+                                    Minesweeper
                 </DropdownItem>
                                 <DropdownItem divider />
                                 <DropdownItem>

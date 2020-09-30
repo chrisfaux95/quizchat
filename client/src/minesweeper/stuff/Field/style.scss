@@ -1,0 +1,11 @@
+.field {
+  display: grid;
+  grid-gap: 1px;
+  padding: 1px;
+  max-width: fit-content;
+  background-color: dimgrey;
+
+  &.disabled {
+    pointer-events: none;
+  }
+}
