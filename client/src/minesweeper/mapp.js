@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { Header, Minesweeper, Footer } from 'stuff';
+import Header from './stuff/Header';
+import Footer from './stuff/Footer';
+import Minesweeper from './stuff/Minesweeper';
+
 
 function Mine () {
   return(

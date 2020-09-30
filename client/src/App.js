@@ -8,9 +8,7 @@ import AddRoom from "./components/Chat/AddRoom";
 import ChatRoom from "./components/Chat/ChatRoom";
 import QuizPg from "./pages/Quiz";
 import HighScoresPg from "./pages/HighScores";
-import MinesweeperHeader from "./minesweeper/stuff/Header";
-import MinesweeperFooter from "./minesweeper/stuff/Footer";
-import Minesweeper from "./minesweeper/stuff/Minesweeper";
+import Minesweeper from "./minesweeper/index";
 
 export default function App() {
     return (
@@ -27,9 +25,7 @@ export default function App() {
                     <HighScoresPg />
                 </Route>
                 <Route path="/minesweeper">
-                    <MinesweeperHeader />
                     <Minesweeper />
-                    <MinesweeperFooter/>
                 </Route>
                 <SecureRoute path="/roomlist">
                     <RoomList />

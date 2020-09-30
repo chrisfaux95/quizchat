@@ -1,17 +1,21 @@
 import React, { StrictMode }  from 'react';
 import { render } from 'react-dom';
 
-import { App } from 'App';
+import Mine from './mapp';
 
-import { setupIcons } from 'setupIcons';
+import setupIcons from './setupIcons';
 
 import './index.scss';
 
 setupIcons();
 
-render(
+function MineGame () {
+  return (
   <StrictMode>
-    <App />
-  </StrictMode>,
-  document.getElementById('root')
-);
+    <Mine />
+  </StrictMode>
+  );
+  };
+
+  export default MineGame;
+
