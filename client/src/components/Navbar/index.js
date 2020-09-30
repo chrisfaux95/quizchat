@@ -21,7 +21,7 @@ const Navigation = (props) => {
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div>
-            <Navbar color="primary" light expand="md">
+            <Navbar color="dark" expand="md">
                 <NavbarBrand><img className="logo" src="Triviatastic.png"/>
                 </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
@@ -38,11 +38,11 @@ const Navigation = (props) => {
                                 Games
               </DropdownToggle>
                             <DropdownMenu right>
-                                <DropdownItem href="/quiz">
+                                <DropdownItem href="/quiz" id="dropdown">
                                     Quiz
                 </DropdownItem>
-                                <DropdownItem>
-                                    Option 2
+                                <DropdownItem href="/minesweeper">
+                                    Minesweeper
                 </DropdownItem>
                                 <DropdownItem divider />
                                 <DropdownItem>

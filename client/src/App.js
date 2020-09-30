@@ -9,7 +9,7 @@ import ChatRoom from "./components/Chat/ChatRoom";
 import QuizPg from "./pages/Quiz";
 import HighScoresPg from "./pages/HighScores";
 import NoMatch from './pages/NoMatch';
-
+import Minesweeper from "./minesweeper/index";
 
 export default function App() {
     return (
@@ -24,6 +24,9 @@ export default function App() {
                 </Route>
                 <Route path="/highscores">
                     <HighScoresPg />
+                </Route>
+                <Route path="/minesweeper">
+                    <Minesweeper />
                 </Route>
                 <SecureRoute path="/roomlist">
                     <RoomList />

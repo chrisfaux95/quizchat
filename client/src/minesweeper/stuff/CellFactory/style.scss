@@ -1,0 +1,75 @@
+$cell-dimension: 28px;
+
+@mixin cross-line($deg) {
+  content: '';
+  width: 2px;
+  height: 100%;
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 45%;
+  transform: rotate($deg);
+}
+
+.cell {
+  width: $cell-dimension;
+  height: $cell-dimension;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #bdbdbd;
+  outline: none;
+
+  &__busted-mine {
+    background-color: red;
+  }
+
+  &__incorrect-guess {
+    position: relative;
+
+    &::before {
+      @include cross-line(-45deg);
+    }
+
+    &::after {
+      @include cross-line(45deg);
+    }
+  }
+
+  &__visible {
+    background-color: white;
+
+    &__1 {
+      color: blue;
+    }
+
+    &__2 {
+      color: green;
+    }
+
+    &__3 {
+      color: red;
+    }
+
+    &__4 {
+      color: purple;
+    }
+
+    &__5 {
+      color: maroon;
+    }
+
+    &__6 {
+      color: turquoise;
+    }
+
+    &__7 {
+      color: black;
+    }
+
+    &__8 {
+      color: gray;
+    }
+  }
+}
