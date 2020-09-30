@@ -8,6 +8,7 @@ import AddRoom from "./components/Chat/AddRoom";
 import ChatRoom from "./components/Chat/ChatRoom";
 import QuizPg from "./pages/Quiz";
 import HighScoresPg from "./pages/HighScores";
+import NoMatch from './pages/NoMatch';
 import Minesweeper from "./minesweeper/index";
 
 export default function App() {
@@ -36,6 +37,9 @@ export default function App() {
                 <SecureRoute path="/chatroom/:room">
                     <ChatRoom />
                 </SecureRoute>
+                <Route>
+                    <NoMatch />
+                </Route>
             </Switch>
         </Router>
     )
