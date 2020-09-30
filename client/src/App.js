@@ -33,6 +33,9 @@ export default function App() {
                 <SecureRoute path="/chatroom/:room">
                     <ChatRoom />
                 </SecureRoute>
+                <Route>
+                    <NoMatch />
+                </Route>
             </Switch>
         </Router>
     )
