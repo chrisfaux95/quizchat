@@ -15,25 +15,6 @@ import QuizPg from "./Quiz";
 import HighScoresPg from "./HighScores";
 
 
-function SecureRoute({ children, ...rest }) {
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-        localStorage.getItem("nickname") ? (
-          children
-        ) : (
-            <Redirect
-              to={{
-                pathname: "/login",
-                state: { from: location },
-              }}
-            />
-          )
-      }
-    />
-  );
-}
 
 function Chat() {
   let location = useLocation();
