@@ -4,6 +4,7 @@ import { getCategories } from '../../utils/quizFunctions';
 
 
 export default function QuizForm() {
+
     let categories = [{ name: "Any", value: "any" }, ...getCategories()];
     return (
         <Form>
