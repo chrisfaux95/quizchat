@@ -9,9 +9,7 @@ export default function QuizBox(props) {
             <h1>{category}</h1>
             <hr />
             <br />
-            <h4>{question}</h4>
-            <br />
-            {answers.map((ans) => <QuizButton answer={ans} />)}
+            <QuestionBox />
         </Container>
     )
 }
@@ -22,4 +20,16 @@ function QuizButton({ answer, onClick }) {
             {answer}
         </Button>
     )
+}
+
+function QuestionBox(props) {
+    let { question, answers } = props;
+    return (
+        <>
+            <h4>{question}</h4>
+            <br />
+            {answers.map((ans) => <QuizButton answer={ans} />)}
+        </>
+    )
+
 }
