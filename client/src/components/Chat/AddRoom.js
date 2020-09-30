@@ -49,11 +49,11 @@ function AddRoom() {
             {showLoading &&
                 <Spinner color="primary" />
             }
-            <Jumbotron>
+            <Jumbotron id="jumbo-2">
                 <h2>Please enter new Room</h2>
                 <Form onSubmit={save}>
                     <FormGroup>
-                        <Label>Room Name</Label>
+                        <Label>Room Name:</Label>
                         <Input type="text" name="roomname" id="roomname" placeholder="Enter Room Name" value={room.roomname} onChange={onChange} />
                     </FormGroup>
                     <Button variant="primary" type="submit">

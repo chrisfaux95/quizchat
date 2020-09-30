@@ -17,7 +17,7 @@ const ModalExample = (props) => {
     <div>
       <Button className="fa fa-plus" onClick={toggle}>{buttonLabel} &nbsp;Add Server</Button>
       <Modal isOpen={modal} fade={false} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalHeader toggle={toggle}>Add Room</ModalHeader>
         <ModalBody>
         <AddRoom />
         </ModalBody>
