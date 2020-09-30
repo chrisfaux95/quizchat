@@ -8,6 +8,7 @@ import AddRoom from "./components/Chat/AddRoom";
 import ChatRoom from "./components/Chat/ChatRoom";
 import QuizPg from "./pages/Quiz";
 import HighScoresPg from "./pages/HighScores";
+import NoMatch from './pages/NoMatch';
 
 
 export default function App() {
