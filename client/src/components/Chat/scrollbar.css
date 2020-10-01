@@ -92,11 +92,12 @@ background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); }
 }
 
 div.MessageBox{
-  border: 2px solid;
+  border: 2px solid black;
   border-radius: 30px;
   padding: 10px;
   margin: 5px;
   text-emphasis: bold;
+  color: black;
 }
 
 div.ChatStatus{
