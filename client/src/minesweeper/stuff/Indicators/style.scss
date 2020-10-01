@@ -1,0 +1,14 @@
+.indicators {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Courier New, Courier, monospace;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 4px;
+}
+
+.smiley-face {
+  font-size: 30px;
+  cursor: pointer;
+}

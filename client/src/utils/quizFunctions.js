@@ -1,3 +1,5 @@
+import otdbAPI from './API/otdbAPI';
+
 // EXPORTS LIST OF CATEGORIES FOR OTDB SORTED ALPHABETICALLY
 export function getCategories() {
     const categories = [
@@ -37,6 +39,13 @@ export function getCategories() {
     return categories;
 }
 
+export function getQuestions(req) {
+        if (req.difficulty === 'any') {
+            return otdbAPI.getQuizAny(req.difficulty);
+        } else {
+            return otdbAPI.getQuiz(req.category, req.difficulty);
+        }
+}
 
 /* Function to shuffle the questions:
 From: https://stackoverflow.com/a/12646864/13871979 */
@@ -47,3 +56,4 @@ export function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+
