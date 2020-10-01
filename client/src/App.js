@@ -10,7 +10,7 @@ import QuizPg from "./pages/Quiz";
 import HighScoresPg from "./pages/HighScores";
 import NoMatch from './pages/NoMatch';
 import Minesweeper from "./minesweeper/index";
-import Tgame from "./tictactoe/index";
+// import Tgame from "./tictactoe/index";
 
 
 export default function App() {
@@ -21,6 +21,9 @@ export default function App() {
                 <Route path="/login">
                     <Login />
                 </Route>
+                {/* <Route path="/ttts">
+                    <Tgame />
+                </Route> */}
                 <Route path="/quiz">
                     <QuizPg />
                 </Route>
@@ -29,9 +32,6 @@ export default function App() {
                 </Route>
                 <Route path="/minesweeper">
                     <Minesweeper />
-                </Route>
-                <Route path="/ttts">
-                    <Tgame />
                 </Route>
                 <SecureRoute path="/roomlist">
                     <RoomList />

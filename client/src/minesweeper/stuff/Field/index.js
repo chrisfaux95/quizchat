@@ -4,7 +4,7 @@ import CellFactory from '../CellFactory';
 
 import './style.scss';
 
-export const Field = ({ width, disabled, state, cellRevealHandler, flagPlantingHandler, neighborsRevealHandler }) => {
+const Field = ({ width, disabled, state, cellRevealHandler, flagPlantingHandler, neighborsRevealHandler }) => {
   const handleFlagPlanting = (event, cell, address) => {
     event.preventDefault();
 
@@ -39,3 +39,5 @@ export const Field = ({ width, disabled, state, cellRevealHandler, flagPlantingH
     </div>
   );
 };
+
+export default Field;
