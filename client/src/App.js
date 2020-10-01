@@ -13,7 +13,6 @@ import Tgame from "./tictactoe/index";
 import Minesweeper from "./minesweeper/index";
 import Sodoku from "./sodoku/index";
 
-
 export default function App() {
     return (
         <Router>
