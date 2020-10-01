@@ -20,6 +20,8 @@ import {
 } from 'reactstrap';
 import Moment from 'moment';
 import firebase from '../../Firebase';
+import Emoji from "./Emoji"
+import FriendsList from "./FriendsList"
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { MDBContainer } from "mdbreact";
 import "./scrollbar.css";
@@ -27,9 +29,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import RoomList from "./RoomList"
 import Navigation from "../Navbar/index"
 import ChatBubble from '../../PopupChat.js/chatBubble';
+import InputEmoji from 'react-input-emoji'
+
 // import '../style/Styles.css';
 
 function ChatRoom(props) {
+    console.log(firebase.database().ref().child("users"))
     const [chats, setChats] = useState([]);
     const [users, setUsers] = useState([]);
     const [nickname, setNickname] = useState('');
@@ -37,6 +42,16 @@ function ChatRoom(props) {
     const [newchat, setNewchat] = useState({ roomname: '', nickname: '', message: '', date: '', type: '' });
     const history = useHistory();
     const { room } = useParams();
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+        //User signed in
+        } else {
+          // No user is signed in.
+        }
+      });
+      console.log(firebase.auth().currentUser)
+    
 
     useEffect(() => {
         const fetchData = async () => {
@@ -151,8 +166,10 @@ function ChatRoom(props) {
                         </MDBContainer>
                         <footer className="StickyFooter">
                             <Form className="MessageForm" onSubmit={submitMessage}>
-                                <InputGroup id="input-box">
+                                <InputGroup id="input-box" >
+                                    
                                     <Input type="text" name="message" id="message" placeholder="Enter message here" value={newchat.message} onChange={onChange} />
+                                    
                                     <InputGroupAddon addonType="append">
                                         <Button variant="primary" type="submit">Send</Button>
                                     </InputGroupAddon>
@@ -171,10 +188,11 @@ function ChatRoom(props) {
                                     </CardSubtitle>
                                 </CardBody>
                             </Card>
+                            {/* ADD FRIEND BUTTON NEXT TO USERS */}
                             {users.map((item, idx) => (
                                 <Card id="user-cards" key={idx} className="UsersCard">
                                     <CardBody>
-                                        <CardSubtitle>{item.nickname}</CardSubtitle>
+                            <CardSubtitle>{item.nickname}<FriendsList/></CardSubtitle>
                                     </CardBody>
                                 </Card>
                             ))}

@@ -11,17 +11,31 @@ import {
 } from 'reactstrap';
 import firebase from '../../Firebase';
 
+
+
+
 function Login() {
     const history = useHistory();
     const [creds, setCreds] = useState({ nickname: '' });
     const [showLoading, setShowLoading] = useState(false);
     const ref = firebase.database().ref('users/');
 
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            console.log(user)
+                } else {
+                    console.log(firebase.auth().currentUser)
+                }
+      });
+      console.log(firebase.auth().currentUser)
+    
+
     const onChange = (e) => {
         e.persist();
         setCreds({...creds, [e.target.name]: e.target.value});
     }
     const login = (e) => {
+    
         e.preventDefault();
         setShowLoading(true);
         ref.orderByChild('nickname').equalTo(creds.nickname).once('value', snapshot => {
@@ -35,9 +49,10 @@ function Login() {
                 localStorage.setItem('nickname', creds.nickname);
                 history.push('/roomlist');
                 setShowLoading(false);
+                
             }
         });
-    };
+    }; console.log(creds, "appear")
     return (
         <div>
             {showLoading &&
