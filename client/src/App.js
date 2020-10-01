@@ -21,9 +21,6 @@ export default function App() {
                 <Route path="/login">
                     <Login />
                 </Route>
-                {/* <Route path="/ttts">
-                    <Tgame />
-                </Route> */}
                 <Route path="/quiz">
                     <QuizPg />
                 </Route>
@@ -33,6 +30,9 @@ export default function App() {
                 <Route path="/minesweeper">
                     <Minesweeper />
                 </Route>
+                {/* <Route path="/ttts">
+                    <Tgame />
+                </Route> */}
                 <SecureRoute path="/roomlist">
                     <RoomList />
                 </SecureRoute>
