@@ -33,7 +33,7 @@ export default function App() {
                 <Route path="/sodoku">
                     <Sodoku />
                 </Route>
-                <Route path="/ttts">
+                <Route path="/tictactoe">
                     <Tgame />
                 </Route>
                 <SecureRoute path="/roomlist">
