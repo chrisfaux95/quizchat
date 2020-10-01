@@ -1,16 +1,16 @@
 import React from 'react';
 
-import Header from './stuff/Header';
-import Footer from './stuff/Footer';
+// import Header from './stuff/Header';
+// import Footer from './stuff/Footer';
 import Minesweeper from './stuff/Minesweeper';
 
 
 function Mine () {
   return(
   <>
-    <Header />
+    {/* <Header /> */}
     <Minesweeper />
-    <Footer />
+    {/* <Footer /> */}
   </>
   )
 };
