@@ -6,12 +6,23 @@ import { getQuestions, shuffleArray } from '../../utils/quizFunctions';
 export default function Quiz() {
     const [quizState, setQuizState] = useState(0);
     const [quizQuestions, setQuizQuestions] = useState([]);
-    const [qIndex, setQIndex] = useState(0);
+    const [score, setScore] = useState(0);
 
     const handleForm = (catNum, diff) => {
-        let q = getQuestions({ category: catNum, difficulty: diff })
-        setQuizQuestions(q);
-        setQuizState(1);
+        console.log(diff,catNum)
+        console.log("handleForm")
+        let q = getQuestions(diff, catNum).then(q => {
+            console.log(q);
+            let qArr = [...q.data.results];
+            console.log("qArr", qArr);
+            shuffleArray(qArr);
+            console.log("qArr (post shuffle)", qArr);
+            console.log("qArr Spread", [...qArr]);
+            setQuizQuestions([...qArr]);
+            console.log("quizQuestions", quizQuestions);
+            setQuizState(1);
+        });
+        
     };
 
     const quizSwitch = () => {
@@ -19,7 +30,7 @@ export default function Quiz() {
             case 0:
                 return <QuizForm handleQuizForm={handleForm}/>
             case 1:
-                return <QuizBox questions={quizQuestions}/>
+                return <QuizBox q={quizQuestions}/>
             case 2:
                 // return <FinalScore />
         }
