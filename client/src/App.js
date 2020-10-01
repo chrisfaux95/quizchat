@@ -10,6 +10,8 @@ import QuizPg from "./pages/Quiz";
 import HighScoresPg from "./pages/HighScores";
 import NoMatch from './pages/NoMatch';
 import Minesweeper from "./minesweeper/index";
+import Tgame from "./tictactoe/index";
+
 
 export default function App() {
     return (
@@ -27,6 +29,9 @@ export default function App() {
                 </Route>
                 <Route path="/minesweeper">
                     <Minesweeper />
+                </Route>
+                <Route path="/ttts">
+                    <Tgame />
                 </Route>
                 <SecureRoute path="/roomlist">
                     <RoomList />
