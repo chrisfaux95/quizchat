@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect, useLocation } from "react-router-dom";
 import SecureRoute from './components/SecureRoute';
-import Navigation from "./components/Navbar"
+import Navigation from "./components/Navbar";
 import Login from "./components/Chat/Login";
 import RoomList from "./components/Chat/RoomList";
 import AddRoom from "./components/Chat/AddRoom";
@@ -9,7 +9,9 @@ import ChatRoom from "./components/Chat/ChatRoom";
 import QuizPg from "./pages/Quiz";
 import HighScoresPg from "./pages/HighScores";
 import NoMatch from './pages/NoMatch';
+import Tgame from "./tictactoe/index";
 import Minesweeper from "./minesweeper/index";
+import Sodoku from "./sodoku/index";
 
 export default function App() {
     return (
@@ -27,6 +29,12 @@ export default function App() {
                 </Route>
                 <Route path="/minesweeper">
                     <Minesweeper />
+                </Route>
+                <Route path="/sodoku">
+                    <Sodoku />
+                </Route>
+                <Route path="/ttts">
+                    <Tgame />
                 </Route>
                 <SecureRoute path="/roomlist">
                     <RoomList />

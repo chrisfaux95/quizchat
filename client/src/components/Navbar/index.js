@@ -22,7 +22,7 @@ const Navigation = (props) => {
     return (
         <div>
             <Navbar color="dark" expand="md">
-                <NavbarBrand><img className="logo" src="Triviatastic.png"/>
+                <NavbarBrand><img className="logo" src="Triviatastic.png" />
                 </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
@@ -44,6 +44,12 @@ const Navigation = (props) => {
                                 <DropdownItem href="/minesweeper">
                                     Minesweeper
                 </DropdownItem>
+                                <DropdownItem href="/ttts">
+                                    Tic-Tac-Toe
+                                    </DropdownItem>
+                                <DropdownItem href="/sodoku">
+                                    Sodoku
+                                    </DropdownItem>
                                 <DropdownItem divider />
                                 <DropdownItem>
                                     Reset
