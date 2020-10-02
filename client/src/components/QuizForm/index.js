@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Input, Button, Label } from 'reactstrap';
 import { getCategories } from '../../utils/quizFunctions';
-
+import './index.css'
 const diff = [
     { name: 'Any', value: 'any' },
     { name: 'Easy', value: 'easy' },
@@ -58,7 +58,8 @@ export default class QuizForm extends Component {
                             })
                         }
                     </Input>
-                </FormGroup>
+                </FormGroup>  
+                <br></br>
                 <FormGroup tag="fieldset">
                     <legend>Select Difficulty</legend>
                     {diff.map(i => {
@@ -70,6 +71,7 @@ export default class QuizForm extends Component {
                         />
                     })}
                 </FormGroup>
+                <br></br>
                 <Button>Start Quiz</Button>
             </Form>
         )
