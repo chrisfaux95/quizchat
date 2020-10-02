@@ -20,8 +20,8 @@ import {
 } from 'reactstrap';
 import Moment from 'moment';
 import firebase from '../../Firebase';
-import Emoji from "./Emoji"
-import FriendsList from "./FriendsList"
+// import Emoji from "./Emoji"
+// import FriendsList from "./FriendsList"
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { MDBContainer } from "mdbreact";
 import "./scrollbar.css";
@@ -192,7 +192,7 @@ function ChatRoom(props) {
                             {users.map((item, idx) => (
                                 <Card id="user-cards" key={idx} className="UsersCard">
                                     <CardBody>
-                            <CardSubtitle>{item.nickname}<FriendsList/></CardSubtitle>
+                            <CardSubtitle>{item.nickname}</CardSubtitle>
                                     </CardBody>
                                 </Card>
                             ))}

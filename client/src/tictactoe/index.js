@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import './boot.css';
-
+import './index.css';
 import Tapp from './tapp';
 
-function Tgame (){
-    return(
-        <Tapp/>
-    )
+function Tgame () {
+    return (
+        <Tapp />
+    );
 }
 
 export default Tgame;

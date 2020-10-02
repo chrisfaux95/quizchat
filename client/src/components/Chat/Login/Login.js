@@ -9,14 +9,14 @@ import {
     Label, 
     Input
 } from 'reactstrap';
-import firebase from '../../Firebase';
+import firebase from '../../../Firebase';
 
 
 
 
 function Login() {
     const history = useHistory();
-    const [creds, setCreds] = useState({ nickname: '' });
+    const [creds, setCreds] = useState({ nickname: '', email:'', password:'' });
     const [showLoading, setShowLoading] = useState(false);
     const ref = firebase.database().ref('users/');
 
@@ -61,8 +61,10 @@ function Login() {
             <Jumbotron>
                 <Form onSubmit={login}>
                     <FormGroup>
-                        <Label>Nickname</Label>
-                        <Input type="text" name="nickname" id="nickname" placeholder="Enter Your Nickname" value={creds.nickname} onChange={onChange} />
+                        <Label>Login</Label>
+                        <Input type="email" name="email" id="email" placeholder="Enter Your Email" value={creds.email} onChange={onChange} />
+                        <Input type="password" name="password" id="password" placeholder="Enter Your Password" value={creds.password} onChange={onChange} />
+                        <Input type="text" name="nickname" id="nickname" placeholder="Enter Your Username" value={creds.nickname} onChange={onChange} />
                     </FormGroup>
                     <Button variant="primary" type="submit">
                         Login
@@ -73,3 +75,5 @@ function Login() {
     );
         };
     export default Login;
+    
+    
