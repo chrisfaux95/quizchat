@@ -1,6 +1,11 @@
 .main {
   padding: 0px 150px 30px 150px;
-  background-color: #000;
+}
+
+main.main{
+  padding-left: 300px;
+  padding-right: 300px;
+  background-color: #430c05;
 }
 
 .main>.info {
@@ -83,7 +88,7 @@
   width: 3px;
   left: 0;
   top: 0;
-  transform: rotateZ(-45deg);
+  transform: rotateZ(-52deg);
   transform-origin: 50% 0;
   transition: height 0.7s;
   -webkit-transition: height 0.7s;
@@ -92,7 +97,7 @@
 }
 
 .main>.board.d0.full::after {
-  height: 140%;
+  height: 170%;
 }
 
 .main>.board.d1::after {
@@ -136,6 +141,7 @@
 
 .main>.board>.board-row>.cell.done {
   color: #fff;
+  
 }
 
 .main>.board.full>.board-row>.cell {
@@ -144,15 +150,70 @@
 
 .main>.board:not(.full)>.board-row>.cell:not(.done):hover {
   cursor: pointer;
-  background-color: #111;
-  color: #111;
+  background-color:#2ab7ca;
+  color: #2ab7ca;
+
+}
+button.cell.cell-0:hover{
+  color: #2ab7ca;
+}
+button.cell.cell-0{
+  color: #430c05;
+}
+button.cell.cell-1:hover{
+  color: #2ab7ca;
+}
+button.cell.cell-1{
+  color: #430c05;
+}
+button.cell.cell-2:hover{
+  color: #2ab7ca;
+}
+button.cell.cell-2{
+  color: #430c05;
+}
+button.cell.cell-3:hover{
+  color: #2ab7ca;
+}
+button.cell.cell-3{
+  color: #430c05;
+}
+button.cell.cell-4:hover{
+  color: #2ab7ca;
+}
+button.cell.cell-4{
+  color: #430c05;
+}
+button.cell.cell-5:hover{
+  color: #2ab7ca;
+}
+button.cell.cell-5{
+  color: #430c05;
+}
+button.cell.cell-6:hover{
+  color: #2ab7ca;
+}
+button.cell.cell-6{
+  color: #430c05;
+}
+button.cell.cell-7:hover{
+  color: #2ab7ca;
+}
+button.cell.cell-7{
+  color: #430c05;
+}
+button.cell.cell-8:hover{
+  color: #2ab7ca;
+}
+button.cell.cell-8{
+  color: #430c05;
 }
 
 .main>.board>.board-row>.cell.cell-0,
 .main>.board>.board-row>.cell.cell-1,
 .main>.board>.board-row>.cell.cell-2 {
   border-top: none;
-}
+  }
 
 .main>.board>.board-row>.cell.cell-0,
 .main>.board>.board-row>.cell.cell-3,

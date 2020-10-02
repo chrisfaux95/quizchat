@@ -6,7 +6,7 @@
 /**
  * Custom Properties for keeping the CSS 'DRY'!
  */
-:root {
+.container {
   --background-color: #fff;
   --color-blue: hsl(210, 88%, 56%);
   --color-grey: hsl(213, 30%, 29%);
@@ -79,7 +79,7 @@ body {
   font-size: 18px;
   font-weight: 400;
   line-height: 2;
-  color: var(--color-grey);
+  color: #000;
   padding-top: 16px;
   cursor: pointer;
 }
@@ -336,7 +336,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--color-grey-lighter);
+  background-color: #08c5d1;
   border-radius: 26px;
   -webkit-transition: .4s;
   transition: .4s;
