@@ -10,6 +10,7 @@ import {
     Input
 } from 'reactstrap';
 import firebase from '../../../Firebase';
+import "./Login.css"
 
 
 
@@ -58,15 +59,17 @@ function Login() {
             {showLoading &&
                 <Spinner color="primary" />
             }
-            <Jumbotron>
+            <Jumbotron id="jumbotron-1">
                 <Form onSubmit={login}>
                     <FormGroup>
-                        <Label>Login</Label>
+                        <Label><h2>Login</h2></Label>
                         <Input type="email" name="email" id="email" placeholder="Enter Your Email" value={creds.email} onChange={onChange} />
+                        <br></br>
                         <Input type="password" name="password" id="password" placeholder="Enter Your Password" value={creds.password} onChange={onChange} />
+                        <br></br>
                         <Input type="text" name="nickname" id="nickname" placeholder="Enter Your Username" value={creds.nickname} onChange={onChange} />
                     </FormGroup>
-                    <Button variant="primary" type="submit">
+                    <Button className="submit-button" variant="primary" type="submit" >
                         Login
                     </Button>
                 </Form>
