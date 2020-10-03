@@ -12,6 +12,11 @@
     
 }
 
+#logo1{
+    max-width: 200px;
+    max-height: 200px;
+}
+
 .lgn-frm{
     text-align: center;
 }
