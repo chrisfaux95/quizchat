@@ -11,7 +11,7 @@ function QuizPg(props) {
     return (
         <div className="row">
             <Scoreboard />
-            <Jumbotron className="col-lg-9 my-0" fluid>
+            <Jumbotron className="col-lg-9 my-0" fluid id="jumbotron-1">
                 {/* <Container fluid>
                     <h3 className="display-3">Dump Game Here</h3>
                     <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>

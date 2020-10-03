@@ -2,3 +2,13 @@
     height: 50px;
     width: 50px;
 }
+
+#jumbotron-1{
+   text-align: center;
+   align-content: center;
+   
+}
+
+select{
+    border: black 2px;
+}

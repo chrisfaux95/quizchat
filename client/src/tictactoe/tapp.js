@@ -9,12 +9,10 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <AppProvider>
-        <div className="app">
+      <AppProvider className="app">
           <Header />
           <Main />
           {/* <Footer /> */}
-        </div>
       </AppProvider>
     );
   }
