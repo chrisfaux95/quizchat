@@ -7,7 +7,8 @@ import {
     Button,
     FormGroup, 
     Label, 
-    Input
+    Input,
+    Container
 } from 'reactstrap';
 import firebase from '../../../Firebase';
 import "./Login.css"
@@ -55,13 +56,18 @@ function Login() {
         });
     }; console.log(creds, "appear")
     return (
+        
+
         <div>
             {showLoading &&
                 <Spinner color="primary" />
             }
-            <Jumbotron id="jumbotron-1">
+            <div className="jumbologin">
+            <h1>Welcome to the Game Cafe</h1>
+                <div className="lgn-frm">
                 <Form onSubmit={login}>
                     <FormGroup>
+                        
                         <Label><h2>Login</h2></Label>
                         <Input type="email" name="email" id="email" placeholder="Enter Your Email" value={creds.email} onChange={onChange} />
                         <br></br>
@@ -73,8 +79,11 @@ function Login() {
                         Login
                     </Button>
                 </Form>
-            </Jumbotron>
+                </div>
+            </div>
+            
         </div>
+        
     );
         };
     export default Login;

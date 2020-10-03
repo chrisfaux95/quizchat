@@ -16,7 +16,7 @@ const ModalExample = (props) => {
 
   return (
     <div>
-      <Button className="fa fa-plus" onClick={toggle}>{buttonLabel} &nbsp;Add Server</Button>
+      <Button className="fa fa-coffee" onClick={toggle}>{buttonLabel} &nbsp;Add Server</Button>
       <Modal isOpen={modal} fade={false} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Add Room</ModalHeader>
         <ModalBody>

@@ -1,3 +1,28 @@
+
+
+.jumbologin{
+    align-content: center;
+    text-align: center;
+    background-image: url("../../../images/login.jpg")  ;
+    background-size: cover;
+    background-position: center;
+    height: 950px;
+    
+        
+    
+}
+
+.lgn-frm{
+    text-align: center;
+}
+
+
+#frm-grp{
+    margin: 0%;
+    padding: 0%;
+
+}
+
 #email{
     max-width: 400px;
     margin: auto;
@@ -11,11 +36,6 @@
     margin: auto;
 }
 
-#jumbotron-1{
-    align-content: center;
-    text-align: center;
-    background-color: #ffbf66;
-}
 
 .submit-button {
     flex: 1 1 auto;
