@@ -12,6 +12,7 @@ import {
 } from 'reactstrap';
 import firebase from '../../../Firebase';
 import "./Login.css"
+import logo1 from '../../../images/loginlogo.png'
 
 
 
@@ -63,7 +64,7 @@ function Login() {
                 <Spinner color="primary" />
             }
             <div className="jumbologin">
-            <h1>Welcome to the Game Cafe</h1>
+            <img src={logo1} id="logo1"/>
                 <div className="lgn-frm">
                 <Form onSubmit={login}>
                     <FormGroup>
