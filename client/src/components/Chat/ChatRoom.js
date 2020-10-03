@@ -134,7 +134,7 @@ function ChatRoom(props) {
         <Container className="mpx-0" fluid={true}  id="container-block">
 
                 <Row className="no-gutters">
-                <Col xs="3">
+                <Col xs="3" id="div-3">
                 < RoomList />
                 </Col>
                     <Col xs="6">
@@ -165,7 +165,7 @@ function ChatRoom(props) {
                                 </div>
                             </Jumbotron>
                         </MDBContainer>
-                        <footer className="StickyFooter">
+                        {/* <footer className="StickyFooter"> */}
                             <Form className="MessageForm" onSubmit={submitMessage}>
                                 <InputGroup id="input-box" >
                                     
@@ -176,15 +176,15 @@ function ChatRoom(props) {
                                     </InputGroupAddon>
                                 </InputGroup>
                             </Form>
-                        </footer>
+                        {/* </footer> */}
                     </Col>
-                    <Col xs="3">
+                    <Col xs="3" id="div-2">
                         <div id="div-cards">
                             <Card className="UsersCard" id="user-card">
                                 <CardBody>
                                     <CardSubtitle>
-                                        <Button variant="primary" type="button" onClick={() => { exitChat() }}>
-                                            Exit Chat
+                                        <Button variant="primary" type="button">
+                                            Add Friend
                                         </Button>
                                     </CardSubtitle>
                                 </CardBody>

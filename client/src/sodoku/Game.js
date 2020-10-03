@@ -220,7 +220,7 @@ export const Game = () => {
 
   return (
     <>
-      <div className={overlay?"container blur":"container"}>
+      <div className={overlay?"container blur":"container"} id="sudo-cont">
         <Header onClick={onClickNewGame}/>
         <div className="innercontainer">
           <GameSection
