@@ -1,3 +1,23 @@
+
+
+#jumbotron-1{
+    max-height: 1440px;
+    min-height: 300px;
+    height: 1200px;
+    width: 1600px;
+    align-content: center;
+    text-align: center;
+    background-image: url("../../../images/login.jpg")  ;
+    background-size: cover;
+    
+}
+
+#frm-grp{
+    margin: 0%;
+    padding: 0%;
+    
+}
+
 #email{
     max-width: 400px;
     margin: auto;
@@ -9,11 +29,6 @@
 #nickname{
     max-width: 400px;
     margin: auto;
-}
-
-#jumbotron-1{
-    align-content: center;
-    text-align: center;
 }
 
 .submit-button {

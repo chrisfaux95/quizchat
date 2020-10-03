@@ -60,8 +60,10 @@ function Login() {
                 <Spinner color="primary" />
             }
             <Jumbotron id="jumbotron-1">
+            <h1>Welcome to the Game Cafe</h1>
                 <Form onSubmit={login}>
                     <FormGroup>
+                        
                         <Label><h2>Login</h2></Label>
                         <Input type="email" name="email" id="email" placeholder="Enter Your Email" value={creds.email} onChange={onChange} />
                         <br></br>
