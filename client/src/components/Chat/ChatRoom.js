@@ -29,7 +29,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import RoomList from "./RoomList"
 import Navigation from "../Navbar/index"
 import ChatBubble from '../../PopupChat.js/chatBubble';
-import InputEmoji from 'react-input-emoji'
+import "./ChatRoom.css"
+// import InputEmoji from 'react-input-emoji'
 
 // import '../style/Styles.css';
 
