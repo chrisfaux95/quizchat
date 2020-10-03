@@ -31,3 +31,10 @@ input.form-check-input{
     border: red 2px;
 }
 
+#logout-btn{
+       position: absolute;
+       bottom: 0px;
+      
+       
+}
+
