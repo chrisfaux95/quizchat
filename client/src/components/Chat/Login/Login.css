@@ -1,21 +1,26 @@
 
 
-#jumbotron-1{
-    max-height: 1440px;
-    min-height: 300px;
-    height: 1200px;
-    width: 1600px;
+.jumbologin{
     align-content: center;
     text-align: center;
     background-image: url("../../../images/login.jpg")  ;
     background-size: cover;
+    background-position: center;
+    height: 950px;
+    
+        
     
 }
+
+.lgn-frm{
+    text-align: center;
+}
+
 
 #frm-grp{
     margin: 0%;
     padding: 0%;
-    
+
 }
 
 #email{
