@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import AddRoom from './AddRoom';
+import './Framework.css'
 
 const ModalExample = (props) => {
   const {
