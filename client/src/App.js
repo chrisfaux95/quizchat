@@ -19,7 +19,7 @@ export default function App() {
         <Router>
             <Navigation />
             <Switch>
-                <Route path="/login">
+                <Route exact path="/">
                     <Login />
                 </Route>
                 <Route path="/quiz">
