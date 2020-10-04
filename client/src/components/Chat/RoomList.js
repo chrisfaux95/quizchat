@@ -22,6 +22,7 @@ import NavigationBar from "../Navbar";
 import firebase from '../../Firebase';
 import AddRoom from './AddRoom';
 import ModalExample from './Framework';
+import './roomlist.css'
 
 function RoomList() {
     const [room, setRoom] = useState([]);

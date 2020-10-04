@@ -1,0 +1,27 @@
+#room-list{
+    border-top: transparent;
+    height: 700px;
+    min-height: 300px;
+    align-content: center;
+    text-align: center;
+  }
+ul.list-group{
+    max-width: 300px ;
+    text-align: center;
+    margin: auto;
+}
+  #list-group{
+      color: white;
+      font-weight: 900;
+      position: relative;
+  }
+  #list-group:hover{
+      background: #08c5d1;
+      cursor: pointer;
+  }
+
+  #logout-btn{
+      position: sticky;
+      left: auto;
+
+  }

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Table } from 'reactstrap';
+import './highscores.css'
 
 function HighScores(props) {
   return (
-    <Table>
-      <thead>
+    <Table id="highscores-tb">
+      <thead id="tr-1">
         <tr>
           <th>Rank</th>
           <th>First Name</th>
@@ -12,7 +13,7 @@ function HighScores(props) {
           <th>Score</th>
           </tr>
       </thead>
-      <tbody>
+      <tbody id="tbody">
         <tr>
           <th scope="row">1</th>
           <td>Example</td>

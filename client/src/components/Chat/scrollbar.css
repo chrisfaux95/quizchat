@@ -52,13 +52,6 @@ background-image: linear-gradient(to top, #08c5d1 0%, white 100%); }
 .card-body{
   background-color:#d46f4d;
 }
-#room-list{
-  border-top: transparent;
-  height: 700px;
-  min-height: 300px;
-  align-content: center;
-  text-align: center;
-}
 
 #list-group {
   border: transparent;
@@ -125,6 +118,3 @@ div.ChatStatus{
   text-shadow: black;
 }
 
-#logout-btn{
-  left: 0;
-}
