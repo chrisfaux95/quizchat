@@ -37,7 +37,7 @@ const Navigation = (props) => {
                             <DropdownToggle nav caret>
                                 Games
               </DropdownToggle>
-                            <DropdownMenu right>
+                            <DropdownMenu right id="drop-down">
                                 <DropdownItem href="/quiz" id="dropdown">
                                     Quiz
                 </DropdownItem>
@@ -48,7 +48,7 @@ const Navigation = (props) => {
                                     Tic-Tac-Toe
                                     </DropdownItem>
                                 <DropdownItem href="/sodoku">
-                                    Sodoku
+                                    Sudoku
                                     </DropdownItem>
                                 <DropdownItem divider />
                                 <DropdownItem>
@@ -57,7 +57,6 @@ const Navigation = (props) => {
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
                 </Collapse>
             </Navbar>
         </div>

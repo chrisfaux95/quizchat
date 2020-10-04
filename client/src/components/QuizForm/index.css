@@ -9,6 +9,18 @@
 .btn:hover {
         background-position: right center; /* change the direction of the change here */
       }
+#jumbotron-1{
+        background-color: #ffbf66;
+}
+#score-board{
+        padding: 0px;
+        text-align: center;
+        color: white;
+}
+div.row{
+ height: 625px;
+ max-width: 1600px;
+}
 
 button.btn{
         flex: 1 1 auto;
