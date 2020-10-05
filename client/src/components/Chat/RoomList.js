@@ -22,6 +22,7 @@ import NavigationBar from "../Navbar";
 import firebase from '../../Firebase';
 import AddRoom from './AddRoom';
 import ModalExample from './Framework';
+import './roomlist.css'
 
 function RoomList() {
     const [room, setRoom] = useState([]);
@@ -110,17 +111,14 @@ function RoomList() {
 
         <div>
 
-            
+{/*             
             <Card className="ServerCard" id="server-card">
 
                 <CardBody>
                     <CardSubtitle>
-                        <Button variant="primary" type="button" onClick={() => { logout() }}>
-                            Exit Chat
-                                        </Button>
                     </CardSubtitle>
                 </CardBody>
-            </Card>
+            </Card> */}
 
             <Card
                 // key={idx} 
@@ -135,9 +133,13 @@ function RoomList() {
                     <CardSubtitle>
                         {/* {item.roomname} */}
                     </CardSubtitle>
+                    <Button variant="primary" id="logout-btn" type="button" onClick={() => { logout() }}>
+                           Log out
+                </Button>
                 </CardBody>
+                
             </Card>
-
+            
         </div>
 
 

@@ -1,0 +1,52 @@
+
+.form-group{
+        max-width: 400px;
+        margin: auto;
+        text-align: left;
+        font-weight: bold;
+      }
+
+.btn:hover {
+        background-position: right center; /* change the direction of the change here */
+      }
+#jumbotron-1{
+        background-color: #ffbf66;
+}
+#score-board{
+        padding: 0px;
+        text-align: center;
+        color: white;
+}
+div.row{
+ height: 625px;
+ max-width: 1600px;
+}
+
+button.btn{
+        flex: 1 1 auto;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: black;
+        box-shadow: 0 0 20px #eee;
+        border-radius: 25px;
+        font-weight: bold;
+        outline:red;
+       }
+
+button.btn {
+        background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+     }
+
+input.form-check-input{
+    border: red 2px;
+}
+
+#logout-btn{
+       position: absolute;
+       bottom: 0px;
+      
+       
+}
+

@@ -5,7 +5,8 @@ import some from 'lodash/some';
 
 import { useField, useDidUpdate } from '../../hooks';
 
-import { Field, Indicators } from '..';
+import Field from "../Field";
+import Indicators from "../Indicators";
 
 import './style.scss';
 

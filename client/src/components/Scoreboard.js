@@ -9,7 +9,7 @@ import {
 
 export default function Scoreboard() {
     return (
-        <Card className="col-lg-3">
+        <Card className="col-lg-3" id="score-board">
             {/* <CardImg className="cardLogo" top width="100%" src="./Triviatastic.png" alt="Card image cap" /> */}
             <CardBody>
                 <CardTitle><h1>Scoreboard</h1></CardTitle>

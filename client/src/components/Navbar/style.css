@@ -20,9 +20,24 @@ a.nav-link{
 
 a.nav-link:hover{
     color: lightsteelblue;
+    transition: all ease-out;
 }
 
-#dropdown{
- background-color: transparent;   
+a.dropdown-item{
+ background-color: transparent;
+ color: black; 
+ border-radius: 20px;
+ transition: all 0.2s ease-in-out;
 }
 
+#drop-down{
+    background-color: #343a40;
+}
+
+a.dropdown-item{
+    color: white;
+}
+
+button.dropdown-item{
+    color: white;
+}

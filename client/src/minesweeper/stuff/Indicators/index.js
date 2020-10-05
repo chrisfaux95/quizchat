@@ -8,7 +8,7 @@ import { formatCount } from '../../utils/count-formatter';
 
 import './style.scss';
 
-export const Indicators = ({ minesCount, smileyFaceClickHandler, shouldStartCountingSeconds, isBust, isVictory }) => {
+const Indicators = ({ minesCount, smileyFaceClickHandler, shouldStartCountingSeconds, isBust, isVictory }) => {
   const [secondsCount, setSecondsCount] = useState(0);
   const [intervalDelay, setIntervalDelay] = useState(null);
 
@@ -38,3 +38,5 @@ export const Indicators = ({ minesCount, smileyFaceClickHandler, shouldStartCoun
     </div>
   );
 };
+
+export default Indicators;

@@ -22,7 +22,7 @@ const Navigation = (props) => {
     return (
         <div>
             <Navbar color="dark" expand="md">
-                <NavbarBrand><img className="logo" src="Triviatastic.png"/>
+                <NavbarBrand><img className="logo" src="logo.png"/>
                 </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
@@ -37,13 +37,19 @@ const Navigation = (props) => {
                             <DropdownToggle nav caret>
                                 Games
               </DropdownToggle>
-                            <DropdownMenu right>
+                            <DropdownMenu right id="drop-down">
                                 <DropdownItem href="/quiz" id="dropdown">
                                     Quiz
                 </DropdownItem>
                                 <DropdownItem href="/minesweeper">
                                     Minesweeper
                 </DropdownItem>
+                                <DropdownItem href="/tictactoe">
+                                    Tic-Tac-Toe
+                                    </DropdownItem>
+                                <DropdownItem href="/sodoku">
+                                    Sudoku
+                                    </DropdownItem>
                                 <DropdownItem divider />
                                 <DropdownItem>
                                     Reset
@@ -51,7 +57,6 @@ const Navigation = (props) => {
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
                 </Collapse>
             </Navbar>
         </div>

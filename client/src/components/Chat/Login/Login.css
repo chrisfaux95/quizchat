@@ -1,0 +1,66 @@
+
+
+.jumbologin{
+    align-content: center;
+    text-align: center;
+    background-image: url("../../../images/login.jpg")  ;
+    background-size: cover;
+    background-position: center;
+    height: 950px;
+    
+        
+    
+}
+
+#logo1{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.lgn-frm{
+    text-align: center;
+}
+
+
+#frm-grp{
+    margin: 0%;
+    padding: 0%;
+
+}
+
+#email{
+    max-width: 400px;
+    margin: auto;
+}
+#password{
+    max-width: 400px;
+    margin: auto;
+}
+#nickname{
+    max-width: 400px;
+    margin: auto;
+}
+
+
+.submit-button {
+    flex: 1 1 auto;
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+   }
+
+.submit-button:hover {
+    background-position: right center; /* change the direction of the change here */
+  }
+
+  .submit-button {
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+  }
+
