@@ -9,25 +9,9 @@ const QuizContext = React.createContext({
     currentQ: "",
     cat: 0,
     diff: "",
-    handleForm: function (cat, diff) {
-        this.cat = cat;
-        this.diff = diff;
-        let q = await getQuestions(diff, cat);
-        shuffleArray(q);
-        this.questions = [...q];
-        this.currentQ = this.questions[0];
-        this.stage = 1;
-    },
-    handleQuiz: function (answer) {
-        if (answer === this.currentQ.correct_answer) {
-            this.score += 100;
-        }
-        let nextQindex = this.questions.indexOf(this.currentQ) + 1;
-        if (nextQindex >= this.questions.length) {
-            this.stage = 2;
-        }
-    },
-    handleScoreSubmit: function (username) {
+    handleForm: function() {},
+    handleQuiz: function() {},
+    handleScoreSubmit: function () {
         // SUBMIT SCORE HERE
         this.stage = 0;
     }

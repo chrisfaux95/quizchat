@@ -5,10 +5,10 @@ import FinalScore from './FinalScore';
 import { getQuestions, shuffleArray } from '../../utils/quizFunctions';
 import QuizContext from '../../utils/QuizContext';
 
-const quiz = useContext(QuizContext);
-export default class Quiz extends Component {
 
-    handleForm = (catNum, diff) => {
+export default function Quiz(props) {
+    const quiz = useContext(QuizContext);
+    const handleForm = (catNum, diff) => {
         // console.log(diff,catNum)
         // console.log("handleForm")
         let q = getQuestions(diff, catNum).then(q => {
@@ -18,14 +18,12 @@ export default class Quiz extends Component {
             shuffleArray(qArr);
             // console.log("qArr (post shuffle)", qArr);
             // console.log("qArr Spread", [...qArr]);
-            setQuizQuestions([...qArr]);
             // console.log("quizQuestions", quizQuestions);
-            setQuizState(1);
         });
     };
-    
 
-    quizSwitch = () => {
+
+    const quizSwitch = () => {
         switch (quiz.stage) {
             case 0:
                 return <QuizForm />
@@ -35,13 +33,10 @@ export default class Quiz extends Component {
                 return <FinalScore />
         }
     }
-
-    render() {
-        return (
-            <>
-                {quizSwitch()}
-            </>
-        )
-    }
+    return (
+        <>
+            {quizSwitch()}
+        </>
+    )
 }
 
