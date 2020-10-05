@@ -10,6 +10,9 @@ const scoreSchema = new Schema({
     //     type: Schema.Types.ObjectId,
     //     ref: "User"
     // },
+    username: {
+        type: "String"
+    },
     value: {
         type: Number,
         required: true

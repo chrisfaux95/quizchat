@@ -6,7 +6,7 @@ import {
 import Scoreboard from "../../components/Scoreboard";
 import Quiz from '../../components/Quiz'
 import QuizContext from '../../utils/QuizContext';
-import { getQuestions, shuffleArray } from '../../utils/quizFunctions'
+import { getQuestions, shuffleArray, saveScore } from '../../utils/quizFunctions'
 import "./style.css"
 
 function QuizPg(props) {
@@ -42,6 +42,7 @@ function QuizPg(props) {
         },
         handleScoreSubmit: function (username) {
             // SUBMIT SCORE HERE
+            
             this.stage = 0;
             setUpdate({})
         }

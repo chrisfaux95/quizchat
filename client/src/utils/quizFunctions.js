@@ -1,5 +1,5 @@
 import otdbAPI from './API/otdbAPI';
-
+import scoresAPI from './API/scoresAPI';
 // EXPORTS LIST OF CATEGORIES FOR OTDB SORTED ALPHABETICALLY
 export function getCategories() {
     const categories = [
@@ -39,6 +39,8 @@ export function getCategories() {
     return categories;
 }
 
+const categories = getCategories();
+
 export async function getQuestions(difficulty, catNum) {
     console.log(difficulty, catNum)
         if (catNum === 'any') {
@@ -52,6 +54,18 @@ export async function getQuestions(difficulty, catNum) {
                 return res;
         }
 }
+
+export function saveScores(username, catNum, score) {
+    let catName = categories.find(element => element.value === catNum).name;
+
+    let req = {
+        username: username,
+        category: catName,
+        value: score
+    }
+    scoresAPI.postScores(req);
+}
+
 
 /* Function to shuffle the questions:
 From: https://stackoverflow.com/a/12646864/13871979 */
