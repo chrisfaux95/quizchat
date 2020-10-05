@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { useContext, useState } from 'react';
 import { Form, FormGroup, Input, Button, Label } from 'reactstrap';
+import QuizContext from '../../utils/QuizContext';
 import { getCategories } from '../../utils/quizFunctions';
 import './index.css'
 const diff = [
@@ -9,73 +10,69 @@ const diff = [
     { name: 'Hard', value: 'hard' }
 ]
 
-export default class QuizForm extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedCat: "any",
-            selectedDiff: "any"
-        }
+
+export default function QuizForm(props) {
+    const quiz = useContext(QuizContext);
+    const [selectedCat, setSelectedCat] = useState("any");
+    const [selectedDiff, setSelectedDiff] = useState("any");
+
+    const handleCatgoryChange = changeEvent => {
+        setSelectedCat(changeEvent.target.value);
     }
 
-    handleCatgoryChange = changeEvent => {
-        this.setState({ selectedCat: changeEvent.target.value })
+    const handleDifficultyChange = changeEvent => {
+        setSelectedDiff(changeEvent.target.value);
     }
 
-    handleDifficultyChange = changeEvent => {
-        this.setState({ selectedDiff: changeEvent.target.value })
-    }
-
-    handleFormSubmit = formEvent => {
+    const handleFormSubmit = formEvent => {
         formEvent.preventDefault();
-        this.props.handleQuizForm(this.state.selectedCat, this.state.selectedDiff);
+        quiz.handleForm(selectedCat, selectedDiff);
     }
 
-
-
-    render() {
-        let categories = [{ name: "Any", value: "any" }, ...getCategories()];
-        return (
-            <Form onSubmit={this.handleFormSubmit}>
-                <FormGroup>
-                    <Label for="category-select">
-                        Select Category:
+    let categories = [{ name: "Any", value: "any" }, ...getCategories()];
+    return (
+        <Form onSubmit={handleFormSubmit}>
+            <FormGroup>
+                <Label for="category-select">
+                    Select Category:
                     </Label>
-                    <Input
+                <Input
                     type="select"
                     name="select"
                     id="category-select"
-                    value={this.state.selectedCat}
-                    onChange={this.handleCatgoryChange}
-                    >
-                        {
-                            categories.map(i => {
-                                return <CategoryOption
-                                    name={i.name}
-                                    value={i.value}
-                                    />
-                            })
-                        }
-                    </Input>
-                </FormGroup>  
-                <br></br>
-                <FormGroup tag="fieldset">
-                    <legend>Select Difficulty</legend>
-                    {diff.map(i => {
-                        return <DifficultyBtn
-                            name={i.name}
-                            value={i.value}
-                            selectedOption={this.state.selectedDiff}
-                            handleOptionChange={this.handleDifficultyChange}
-                        />
-                    })}
-                </FormGroup>
-                <br></br>
-                <Button>Start Quiz</Button>
-            </Form>
-        )
-    }
+                    value={selectedCat}
+                    onChange={handleCatgoryChange}
+                >
+                    {
+                        categories.map(i => {
+                            return <CategoryOption
+                                name={i.name}
+                                value={i.value}
+                            />
+                        })
+                    }
+                </Input>
+            </FormGroup>
+            <br></br>
+            <FormGroup tag="fieldset">
+                <legend>Select Difficulty</legend>
+                {diff.map(i => {
+                    return <DifficultyBtn
+                        name={i.name}
+                        value={i.value}
+                        selectedOption={selectedDiff}
+                        handleOptionChange={handleDifficultyChange}
+                    />
+                })}
+            </FormGroup>
+            <br></br>
+            <Button>Start Quiz</Button>
+        </Form>
+    )
+
+
+
 }
 
 function CategoryOption({ name, value }) {

@@ -1,35 +1,41 @@
-import React from 'react';
-import { Button, Container } from 'reactstrap';
+import React, { useContext } from 'react';
+import QuizContext from '../../utils/QuizContext';
 import { shuffleArray } from '../../utils/quizFunctions';
+import { CatHead, QHead, AnsBtn } from '../Quiz/questionComponents';
 
 export default function QuizBox(props) {
-    let { category, question, answers } = props;
+
+    const quiz = useContext(QuizContext);
+
+    const handleAnswer = () => {
+        quiz.handleQuiz();
+    }
+
+    const handleAnswerDisplay = function(question){
+        console.log(question.correct_answer);
+        let ansArr = [question.correct_answer, ...question.incorrect_answers];
+        shuffleArray(ansArr);
+        return (
+            <div>
+                {ansArr.map(a => <AnsBtn handleAnswer={handleAnswer} answer={a}/>)}
+            </div>
+        )
+    
+    }
+
     return (
-        <Container fluid>
-            <h1>{category}</h1>
-            <hr />
-            <br />
-            <QuestionBox question={question} answers={answers} />
-        </Container>
+        <div>
+            <CatHead>
+                {quiz.currentQ.category}
+            </CatHead>
+            <QHead>
+                {quiz.currentQ.question}
+            </QHead>
+            <div>
+                {handleAnswerDisplay(quiz.currentQ)}
+            </div>
+        </div>
     )
 }
 
-function QuizButton({ answer, onClick }) {
-    return (
-        <Button>
-            {answer}
-        </Button>
-    )
-}
 
-function QuestionBox(props) {
-    let { question, answers } = props;
-    return (
-        <>
-            <h4>{question}</h4>
-            <br />
-            {answers.map((ans) => <QuizButton answer={ans} />)}
-        </>
-    )
-
-}

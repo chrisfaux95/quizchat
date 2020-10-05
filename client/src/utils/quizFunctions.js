@@ -39,11 +39,17 @@ export function getCategories() {
     return categories;
 }
 
-export function getQuestions(req) {
-        if (req.difficulty === 'any') {
-            return otdbAPI.getQuizAny(req.difficulty);
+export async function getQuestions(difficulty, catNum) {
+    console.log(difficulty, catNum)
+        if (catNum === 'any') {
+            let res = await otdbAPI.getQuizAny(difficulty)
+                console.log(res);
+                return res;
+            // console.log(otdbAPI.getQuizAny(difficulty));
         } else {
-            return otdbAPI.getQuiz(req.category, req.difficulty);
+            let res = await otdbAPI.getQuiz(catNum, difficulty)
+                console.log(res);
+                return res;
         }
 }
 
