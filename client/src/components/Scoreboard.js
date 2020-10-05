@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
     Card,
     CardBody,
@@ -6,8 +6,10 @@ import {
     CardSubtitle,
     CardText
 } from 'reactstrap';
+import QuizContext from '../utils/QuizContext';
 
 export default function Scoreboard() {
+    const quiz = useContext(QuizContext);
     return (
         <Card className="col-lg-3" id="score-board">
             {/* <CardImg className="cardLogo" top width="100%" src="./Triviatastic.png" alt="Card image cap" /> */}
@@ -16,7 +18,7 @@ export default function Scoreboard() {
                 <hr />
                 <CardSubtitle><h3>Username</h3></CardSubtitle>
                 <hr />
-                <CardText>Score</CardText>
+                <CardText>Score: {quiz.score}</CardText>
                 <hr />
                 <CardText>Highscore</CardText>
                 <hr />
