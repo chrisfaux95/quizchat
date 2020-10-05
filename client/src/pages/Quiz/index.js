@@ -42,7 +42,7 @@ function QuizPg(props) {
         },
         handleScoreSubmit: function (username) {
             // SUBMIT SCORE HERE
-            
+            saveScore(username, this.cat, this.score)
             this.stage = 0;
             setUpdate({})
         }
