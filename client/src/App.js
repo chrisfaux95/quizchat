@@ -11,7 +11,7 @@ import HighScoresPg from "./pages/HighScores";
 import NoMatch from './pages/NoMatch';
 import Tgame from "./tictactoe/index";
 import Minesweeper from "./minesweeper/index";
-import Sodoku from "./sodoku/index";
+import Sudoku from "./sudoku/index";
 import Status from "./components/Chat/Status"
 
 export default function App() {
@@ -31,21 +31,21 @@ export default function App() {
                 <Route path="/minesweeper">
                     <Minesweeper />
                 </Route>
-                <Route path="/sodoku">
-                    <Sodoku />
+                <Route path="/sudoku">
+                    <Sudoku />
                 </Route>
                 <Route path="/tictactoe">
                     <Tgame />
                 </Route>
-                <SecureRoute path="/roomlist">
+                <Route path="/roomlist">
                     <RoomList />
-                </SecureRoute>
+                </Route>
                 {/* <SecureRoute path="/addroom">
             <AddRoom />
           </SecureRoute> */}
-                <SecureRoute path="/chatroom/:room">
+                <Route path="/chatroom/:room">
                     <ChatRoom />
-                </SecureRoute>
+                </Route>
                 <Route>
                     <NoMatch />
                 </Route>
