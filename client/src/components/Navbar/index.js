@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import {
     Collapse,
     Navbar,
@@ -22,38 +23,27 @@ const Navigation = (props) => {
     return (
         <div>
             <Navbar color="dark" expand="md">
-                <NavbarBrand><img className="logo" src="logo.png"/>
+                <NavbarBrand><img className="logo" src="logo.png" />
                 </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/roomlist">Room List</NavLink>
+                            <Link to="/roomlist" component={NavLink}>Room List</Link>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/highscores">High Scores</NavLink>
+                            <Link to="/highscores" component={NavLink}>High Scores</Link>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav caret>
                                 Games
-              </DropdownToggle>
+                            </DropdownToggle>
                             <DropdownMenu right id="drop-down">
-                                <DropdownItem href="/quiz" id="dropdown">
-                                    Quiz
-                </DropdownItem>
-                                <DropdownItem href="/minesweeper">
-                                    Minesweeper
-                </DropdownItem>
-                                <DropdownItem href="/tictactoe">
-                                    Tic-Tac-Toe
-                                    </DropdownItem>
-                                <DropdownItem href="/sodoku">
-                                    Sudoku
-                                    </DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>
-                                    Reset
-                </DropdownItem>
+                                <Link to="/quiz"
+                                id="dropdown" component={DropdownItem}>Quiz</Link>
+                                <Link to="/minesweeper" component={DropdownItem}>Minesweeper</Link>
+                                <Link to="/tictactoe" component={DropdownItem}>Tic-Tac-Toe</Link>
+                                <Link to="/sudoku" component={DropdownItem}>Sudoku</Link>
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
