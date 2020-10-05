@@ -1,67 +1,47 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import QuizBox from '../QuizBox';
 import QuizForm from '../QuizForm';
 import FinalScore from './FinalScore';
 import { getQuestions, shuffleArray } from '../../utils/quizFunctions';
+import QuizContext from '../../utils/QuizContext';
 
-export default function Quiz(props) {
+const quiz = useContext(QuizContext);
+export default class Quiz extends Component {
+
+    handleForm = (catNum, diff) => {
+        // console.log(diff,catNum)
+        // console.log("handleForm")
+        let q = getQuestions(diff, catNum).then(q => {
+            // console.log(q);
+            let qArr = [...q.data.results];
+            // console.log("qArr", qArr);
+            shuffleArray(qArr);
+            // console.log("qArr (post shuffle)", qArr);
+            // console.log("qArr Spread", [...qArr]);
+            setQuizQuestions([...qArr]);
+            // console.log("quizQuestions", quizQuestions);
+            setQuizState(1);
+        });
+    };
     
+
+    quizSwitch = () => {
+        switch (quiz.stage) {
+            case 0:
+                return <QuizForm />
+            case 1:
+                return <QuizBox />
+            case 2:
+                return <FinalScore />
+        }
+    }
+
+    render() {
+        return (
+            <>
+                {quizSwitch()}
+            </>
+        )
+    }
 }
-
-
-
-
-
-// export default class Quiz extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             score: 0,
-//             quizState: 0,
-//             quizQuestions: []
-//         }
-//     }
-
-//     handleForm = (catNum, diff) => {
-//         // console.log(diff,catNum)
-//         // console.log("handleForm")
-//         let q = getQuestions(diff, catNum).then(q => {
-//             // console.log(q);
-//             let qArr = [...q.data.results];
-//             // console.log("qArr", qArr);
-//             shuffleArray(qArr);
-//             // console.log("qArr (post shuffle)", qArr);
-//             // console.log("qArr Spread", [...qArr]);
-//             setQuizQuestions([...qArr]);
-//             // console.log("quizQuestions", quizQuestions);
-//             setQuizState(1);
-//         });
-//     };
-    
-
-//     quizSwitch = () => {
-//         switch (quizState) {
-//             case 0:
-//                 return <QuizForm handleQuizForm={handleForm} />
-//             case 1:
-//                 return <QuizBox
-//                     q={quizQuestions}
-//                     quizState={quizState}
-//                     score={score}
-//                 />
-//             case 2:
-//                 return <FinalScore
-//                     score={score}
-//                     quizState={quizState} />
-//         }
-//     }
-
-//     render() {
-//         return (
-//             <>
-//                 {quizSwitch()}
-//             </>
-//         )
-//     }
-// }
 
