@@ -7,7 +7,7 @@ export default {
     getQuiz: function (catNum, difficulty) {
         let qURL = `${BASEURL_count}category=${catNum}`
         // console.log(qURL)
-        axios.get(qURL).then(res => {
+        return axios.get(qURL).then(res => {
             var qAmt = 0;
             let qTot
             console.log(res);
