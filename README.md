@@ -4,6 +4,8 @@
 
 <br>
 
+* link to deployed application: https://game-n-chat.herokuapp.com/
+
 # Usage 
 Users are brought to the main page where they will create their credentials. After logging in the user will be brought to a page filled with dynamically created room's by other users or can even create a room of there own! When the user feels they no longer wish to chat and want to play a couple games they can easily acess our list of games from the dropdown menu. Once clicked the user is seemlesly brought through multiple game pages where they can play to their hearts content.  
 
